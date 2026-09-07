@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avisos de avería · La Nevera</title>
+<meta name="description" content="Informe de avisos de avería de La Nevera.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0F14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/icono.png">
+<style>
+/* ───────────────────────────── Tema ───────────────────────────── */
+:root{
+  --fondo:#0B0F14; --superficie:#121821; --superficie-2:#18202B; --superficie-3:#1E2836;
+  --borde:#26324333; --borde-solido:#253143;
+  --texto:#E7EDF5; --texto-suave:#93A3B8; --texto-tenue:#64748B;
+  --acento:#4CC9F0; --acento-tinte:rgba(76,201,240,.13); --acento-borde:rgba(76,201,240,.35);
+  --alerta:#FF6B6B; --alerta-tinte:rgba(255,107,107,.13); --alerta-borde:rgba(255,107,107,.32);
+  --ok:#34D399; --ok-tinte:rgba(52,211,153,.13); --ok-borde:rgba(52,211,153,.30);
+  --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  --radio:14px; --radio-s:10px;
+}
+html[data-tema="claro"]{
+  --fondo:#F2F5F9; --superficie:#FFFFFF; --superficie-2:#F7F9FC; --superficie-3:#EDF2F8;
+  --borde:#0F172A14; --borde-solido:#DCE4EE;
+  --texto:#0F1720; --texto-suave:#54657A; --texto-tenue:#8494A8;
+  --acento:#0679B8; --acento-tinte:rgba(6,121,184,.09); --acento-borde:rgba(6,121,184,.28);
+  --alerta:#D62828; --alerta-tinte:rgba(214,40,40,.08); --alerta-borde:rgba(214,40,40,.26);
+  --ok:#0E9F6E; --ok-tinte:rgba(14,159,110,.09); --ok-borde:rgba(14,159,110,.26);
+  --sombra:0 1px 2px rgba(15,23,32,.06), 0 8px 24px -14px rgba(15,23,32,.28);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+/* Bug conocido: un elemento con [hidden] al que el CSS le da display:flex
+   sigue ocupando sitio y bloqueando clics. Esto lo zanja. */
+[hidden]{display:none !important}
+
+body{
+  margin:0; background:var(--fondo); color:var(--texto);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  transition:background .25s ease, color .25s ease;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.mono{font-family:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* ───────────────────────────── Cabecera ───────────────────────────── */
+header{
+  position:sticky; top:0; z-index:40;
+  background:color-mix(in srgb, var(--fondo) 86%, transparent);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--borde);
+}
+.barra{
+  max-width:1080px; margin:0 auto; padding:12px 16px;
+  display:flex; align-items:center; gap:12px;
+}
+.marca{display:flex; align-items:center; gap:11px; min-width:0; margin-right:auto}
+/* Dos versiones del logo: la tinta del original es casi negra, así que en
+   modo oscuro se usa una variante con el logotipo en blanco. El intercambio
+   lo hace el CSS, no JS, para que no haya parpadeo al cargar. */
+.logo{height:42px; width:auto; display:block; flex-shrink:0}
+.logo-oscuro{display:block}
+.logo-claro{display:none}
+html[data-tema="claro"] .logo-oscuro{display:none}
+html[data-tema="claro"] .logo-claro{display:block}
+.marca-texto{min-width:0}
+.marca-texto b{display:block; font-size:15px; font-weight:700; letter-spacing:-.01em; line-height:1.2}
+.marca-texto span{display:block; font-size:11.5px; color:var(--texto-tenue); letter-spacing:.04em; text-transform:uppercase}
+@media(max-width:560px){ .marca-texto b{font-size:14px} .marca-texto span{display:none} .logo{height:34px} }
+
+.acciones{display:flex; align-items:center; gap:8px; flex-shrink:0}
+
+button{font:inherit; cursor:pointer; border:none; background:none; color:inherit}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  padding:9px 14px; border-radius:var(--radio-s); font-size:13.5px; font-weight:600;
+  background:var(--superficie-2); color:var(--texto); border:1px solid var(--borde-solido);
+  transition:background .18s, border-color .18s, transform .1s, opacity .18s;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--superficie-3)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.55; cursor:progress}
+.btn-acento{background:var(--acento-tinte); border-color:var(--acento-borde); color:var(--acento)}
+.btn-acento:hover{background:color-mix(in srgb,var(--acento-tinte) 60%, var(--acento) 12%)}
+.btn-peligro{background:var(--alerta-tinte); border-color:var(--alerta-borde); color:var(--alerta)}
+.btn-icono{padding:9px 10px}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+@media(max-width:560px){ .btn-texto-largo{display:none} .btn{padding:9px 11px} }
+
+/* Aviso del botón Actualizar: nunca debe parecer que no hace nada. */
+.aviso-refresco{
+  max-width:1080px; margin:0 auto; padding:0 16px;
+  overflow:hidden; max-height:0; transition:max-height .3s ease;
+}
+.aviso-refresco.visible{max-height:70px}
+.aviso-refresco .caja{
+  margin-bottom:12px; padding:9px 13px; border-radius:var(--radio-s); font-size:13px; font-weight:500;
+  display:flex; align-items:center; gap:8px;
+  background:var(--superficie-2); border:1px solid var(--borde-solido); color:var(--texto-suave);
+}
+.aviso-refresco .caja.nuevo{background:var(--ok-tinte); border-color:var(--ok-borde); color:var(--ok)}
+.aviso-refresco .caja.error{background:var(--alerta-tinte); border-color:var(--alerta-borde); color:var(--alerta)}
+.punto{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+/* ───────────────────────────── Contenido ───────────────────────────── */
+main{max-width:1080px; margin:0 auto; padding:18px 16px 56px}
+
+.resumen{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px}
+.tarjeta-dato{
+  background:var(--superficie); border:1px solid var(--borde-solido); border-radius:var(--radio);
+  padding:13px 15px;
+}
+.tarjeta-dato .cifra{font-size:26px; font-weight:700; letter-spacing:-.02em; line-height:1.1}
+.tarjeta-dato .etiqueta{font-size:11.5px; color:var(--texto-tenue); text-transform:uppercase; letter-spacing:.05em; margin-top:2px}
+.tarjeta-dato.parada .cifra{color:var(--alerta)}
+.tarjeta-dato.pendientes .cifra{color:var(--acento)}
+@media(max-width:560px){ .tarjeta-dato{padding:11px 12px} .tarjeta-dato .cifra{font-size:21px} .tarjeta-dato .etiqueta{font-size:10px} }
+
+/* Filtros */
+.filtros{display:flex; flex-direction:column; gap:11px; margin-bottom:18px}
+.pestanas{display:flex; gap:6px; background:var(--superficie); border:1px solid var(--borde-solido); border-radius:var(--radio); padding:5px}
+.pestana{
+  flex:1; padding:8px 10px; border-radius:9px; font-size:13.5px; font-weight:600;
+  color:var(--texto-suave); transition:background .18s,color .18s; white-space:nowrap;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.pestana:hover{color:var(--texto)}
+.pestana[aria-selected="true"]{background:var(--acento-tinte); color:var(--acento)}
+.pestana .cuenta{font-size:11px; opacity:.75; font-weight:700}
+
+.fila-filtros{display:flex; gap:10px; align-items:stretch; flex-wrap:wrap}
+.buscador{position:relative; flex:1; min-width:200px}
+.buscador svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--texto-tenue); pointer-events:none}
+.buscador input{
+  width:100%; padding:11px 36px 11px 36px; font:inherit; font-size:14px;
+  background:var(--superficie); color:var(--texto);
+  border:1px solid var(--borde-solido); border-radius:var(--radio-s); outline:none;
+  transition:border-color .18s, box-shadow .18s;
+}
+.buscador input:focus{border-color:var(--acento-borde); box-shadow:0 0 0 3px var(--acento-tinte)}
+.buscador input::placeholder{color:var(--texto-tenue)}
+.limpiar-busqueda{position:absolute; right:8px; top:50%; transform:translateY(-50%); padding:5px; border-radius:6px; color:var(--texto-tenue); line-height:0}
+.limpiar-busqueda:hover{color:var(--texto); background:var(--superficie-3)}
+
+.interruptor{
+  display:flex; align-items:center; gap:10px; cursor:pointer; user-select:none;
+  padding:10px 14px; background:var(--superficie); border:1px solid var(--borde-solido);
+  border-radius:var(--radio-s); font-size:13.5px; font-weight:600; color:var(--texto-suave);
+  transition:border-color .18s,color .18s;
+}
+.interruptor input{position:absolute; opacity:0; width:0; height:0}
+.pista{width:36px; height:20px; border-radius:99px; background:var(--superficie-3); border:1px solid var(--borde-solido); position:relative; transition:background .2s,border-color .2s; flex-shrink:0}
+.pista::after{content:''; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:var(--texto-tenue); transition:transform .2s, background .2s}
+.interruptor input:checked + .pista{background:var(--alerta-tinte); border-color:var(--alerta-borde)}
+.interruptor input:checked + .pista::after{transform:translateX(16px); background:var(--alerta)}
+.interruptor:has(input:checked){color:var(--alerta); border-color:var(--alerta-borde)}
+.interruptor input:focus-visible + .pista{box-shadow:0 0 0 3px var(--acento-tinte)}
+
+/* Lista de avisos */
+.lista{display:flex; flex-direction:column; gap:10px}
+.aviso{
+  background:var(--superficie); border:1px solid var(--borde-solido); border-radius:var(--radio);
+  overflow:hidden; transition:border-color .18s, box-shadow .18s;
+}
+.aviso:hover{border-color:color-mix(in srgb,var(--borde-solido) 55%, var(--acento) 45%)}
+.aviso.abierto{border-color:var(--acento-borde); box-shadow:var(--sombra)}
+.aviso.con-paro{border-left:3px solid var(--alerta)}
+
+.cabecera-aviso{
+  width:100%; display:flex; align-items:center; gap:12px; padding:14px 16px; text-align:left;
+}
+.numero{
+  font-size:12.5px; font-weight:700; color:var(--texto-tenue);
+  background:var(--superficie-2); border:1px solid var(--borde-solido);
+  padding:4px 8px; border-radius:7px; flex-shrink:0;
+}
+.datos-aviso{flex:1; min-width:0}
+.titulo-aviso{font-weight:600; font-size:14.5px; letter-spacing:-.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.sub-aviso{font-size:12.5px; color:var(--texto-tenue); margin-top:2px; display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+.sub-aviso .sep{opacity:.4}
+.insignias{display:flex; align-items:center; gap:7px; flex-shrink:0}
+.insignia{font-size:11.5px; font-weight:700; padding:4px 9px; border-radius:99px; white-space:nowrap; border:1px solid transparent}
+.insignia.pendiente{background:var(--acento-tinte); color:var(--acento); border-color:var(--acento-borde)}
+.insignia.terminado{background:var(--ok-tinte); color:var(--ok); border-color:var(--ok-borde)}
+.insignia.paro{background:var(--alerta-tinte); color:var(--alerta); border-color:var(--alerta-borde)}
+.flecha{color:var(--texto-tenue); transition:transform .22s ease; flex-shrink:0; line-height:0}
+.aviso.abierto .flecha{transform:rotate(180deg); color:var(--acento)}
+@media(max-width:640px){
+  .cabecera-aviso{flex-wrap:wrap; gap:9px; padding:13px 14px}
+  .datos-aviso{flex-basis:100%; order:3}
+  .insignias{margin-left:auto}
+  .insignia.paro span{display:none}
+  .titulo-aviso{white-space:normal}
+}
+
+/* Detalle */
+.detalle{padding:0 16px 16px; border-top:1px solid var(--borde); margin-top:-1px}
+.bloque{margin-top:15px}
+.bloque h4{
+  margin:0 0 7px; font-size:11px; font-weight:700; text-transform:uppercase;
+  letter-spacing:.07em; color:var(--texto-tenue);
+}
+.descripcion{
+  white-space:pre-wrap; word-break:break-word; font-size:14.5px; line-height:1.6;
+  background:var(--superficie-2); border:1px solid var(--borde); border-radius:var(--radio-s); padding:12px 14px;
+}
+.descripcion.vacia{color:var(--texto-tenue); font-style:italic}
+
+.ficha{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px}
+.campo{background:var(--superficie-2); border:1px solid var(--borde); border-radius:var(--radio-s); padding:10px 12px}
+.campo dt{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--texto-tenue); font-weight:700}
+.campo dd{margin:3px 0 0; font-size:14px; font-weight:500; word-break:break-word}
+
+.adjuntos{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:11px}
+.adjunto{
+  background:var(--superficie-2); border:1px solid var(--borde-solido);
+  border-radius:var(--radio-s); overflow:hidden; display:flex; flex-direction:column;
+}
+.adjunto img, .adjunto video{width:100%; display:block; background:#000; aspect-ratio:4/3; object-fit:contain}
+.adjunto img{cursor:zoom-in}
+.pie-adjunto{
+  padding:8px 11px; font-size:11.5px; color:var(--texto-tenue);
+  display:flex; align-items:center; gap:7px; justify-content:space-between; min-width:0;
+}
+.pie-adjunto .nombre{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.tipo-adjunto{
+  font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+  padding:2px 6px; border-radius:5px; flex-shrink:0;
+  background:var(--acento-tinte); color:var(--acento);
+}
+.tipo-adjunto.video{background:var(--alerta-tinte); color:var(--alerta)}
+.adjunto-otro{padding:16px; text-align:center}
+.adjunto-otro a{color:var(--acento); font-weight:600; font-size:13.5px; word-break:break-all}
+
+.nota-caducidad{
+  margin-top:9px; font-size:12px; color:var(--texto-tenue);
+  display:flex; gap:7px; align-items:flex-start; line-height:1.45;
+}
+.nota-caducidad svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+
+.pie-detalle{display:flex; justify-content:flex-end; margin-top:16px; padding-top:14px; border-top:1px solid var(--borde)}
+
+/* Estados vacíos */
+.vacio{text-align:center; padding:56px 20px; color:var(--texto-tenue)}
+.vacio svg{width:38px;height:38px;margin-bottom:12px;opacity:.5}
+.vacio p{margin:0; font-size:14.5px}
+.vacio .sugerencia{font-size:13px; margin-top:6px; opacity:.8}
+
+.esqueleto{height:66px; border-radius:var(--radio); background:linear-gradient(90deg,var(--superficie) 0%,var(--superficie-3) 50%,var(--superficie) 100%); background-size:200% 100%; animation:brillo 1.3s infinite}
+@keyframes brillo{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* Pie */
+footer{
+  max-width:1080px; margin:0 auto; padding:22px 16px 34px; border-top:1px solid var(--borde);
+  color:var(--texto-tenue); font-size:12.5px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+
+/* ───────────────────────────── Modales ───────────────────────────── */
+.velo{
+  position:fixed; inset:0; z-index:60; background:rgba(3,6,10,.72);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center; padding:18px;
+  animation:aparecer .16s ease;
+}
+@keyframes aparecer{from{opacity:0}to{opacity:1}}
+.modal{
+  background:var(--superficie); border:1px solid var(--borde-solido); border-radius:var(--radio);
+  padding:22px; max-width:400px; width:100%; box-shadow:0 24px 60px -20px rgba(0,0,0,.75);
+  animation:subir .2s cubic-bezier(.2,.8,.3,1);
+}
+@keyframes subir{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.modal h3{margin:0 0 6px; font-size:17px; font-weight:700; letter-spacing:-.01em}
+.modal p{margin:0 0 16px; font-size:14px; color:var(--texto-suave); line-height:1.5}
+.modal .resumen-aviso{
+  background:var(--superficie-2); border:1px solid var(--borde); border-radius:var(--radio-s);
+  padding:10px 13px; margin-bottom:15px; font-size:13.5px;
+}
+.modal input[type="password"]{
+  width:100%; padding:11px 13px; font:inherit; font-size:15px;
+  background:var(--superficie-2); color:var(--texto);
+  border:1px solid var(--borde-solido); border-radius:var(--radio-s); outline:none;
+}
+.modal input[type="password"]:focus{border-color:var(--acento-borde); box-shadow:0 0 0 3px var(--acento-tinte)}
+.error-modal{color:var(--alerta); font-size:13px; font-weight:600; margin-top:9px; display:flex; gap:6px; align-items:center}
+.botones-modal{display:flex; gap:9px; justify-content:flex-end; margin-top:18px}
+
+.visor{position:fixed; inset:0; z-index:70; background:rgba(3,6,10,.94); display:flex; align-items:center; justify-content:center; padding:22px; cursor:zoom-out}
+.visor img{max-width:100%; max-height:100%; object-fit:contain; border-radius:8px}
+.cerrar-visor{position:absolute; top:16px; right:16px; padding:9px; border-radius:9px; background:rgba(255,255,255,.1); color:#fff; line-height:0}
+
+.girando{animation:girar .8s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="barra">
+    <div class="marca">
+      <img class="logo logo-claro" src="assets/logo.png" alt="La Nevera">
+      <img class="logo logo-oscuro" src="assets/logo-oscuro.png" alt="La Nevera">
+      <div class="marca-texto">
+        <b id="marca-nombre" hidden>LA NEVERA</b>
+        <span>Avisos de avería</span>
+      </div>
+    </div>
+    <div class="acciones">
+      <button class="btn btn-acento" id="btn-actualizar" title="Comprobar si hay avisos nuevos">
+        <svg id="icono-refrescar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+        <span class="btn-texto-largo">Actualizar</span>
+      </button>
+      <button class="btn btn-icono" id="btn-tema" title="Cambiar entre modo claro y oscuro" aria-label="Cambiar tema">
+        <svg id="icono-tema" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="aviso-refresco" id="aviso-refresco">
+    <div class="caja" id="caja-refresco"><span class="punto"></span><span id="texto-refresco"></span></div>
+  </div>
+</header>
+
+<main>
+  <section class="resumen" aria-label="Resumen">
+    <div class="tarjeta-dato"><div class="cifra mono" id="dato-total">—</div><div class="etiqueta">Avisos</div></div>
+    <div class="tarjeta-dato pendientes"><div class="cifra mono" id="dato-pendientes">—</div><div class="etiqueta">Pendientes</div></div>
+    <div class="tarjeta-dato parada"><div class="cifra mono" id="dato-paro">—</div><div class="etiqueta">Con parada</div></div>
+  </section>
+
+  <section class="filtros">
+    <div class="pestanas" role="tablist" aria-label="Filtrar por estado">
+      <button class="pestana" role="tab" aria-selected="true" data-estado="todos">Todos <span class="cuenta mono" id="c-todos"></span></button>
+      <button class="pestana" role="tab" aria-selected="false" data-estado="Pendiente">Pendientes <span class="cuenta mono" id="c-pendiente"></span></button>
+      <button class="pestana" role="tab" aria-selected="false" data-estado="Terminado">Terminados <span class="cuenta mono" id="c-terminado"></span></button>
+    </div>
+    <div class="fila-filtros">
+      <div class="buscador">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="busqueda" placeholder="Buscar por cliente, máquina, lugar o descripción…" autocomplete="off" aria-label="Buscar avisos">
+        <button class="limpiar-busqueda" id="limpiar-busqueda" hidden aria-label="Limpiar búsqueda">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m18 6-12 12M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <label class="interruptor">
+        <input type="checkbox" id="solo-paro">
+        <span class="pista"></span>
+        Solo con parada
+      </label>
+    </div>
+  </section>
+
+  <div class="lista" id="lista">
+    <div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div>
+  </div>
+
+  <div class="vacio" id="vacio" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10h18M8 5v3"/></svg>
+    <p id="vacio-texto">No hay avisos que mostrar.</p>
+    <p class="sugerencia" id="vacio-sugerencia" hidden>Prueba a quitar algún filtro.</p>
+  </div>
+</main>
+
+<footer>
+  <span>La Nevera · Avisos de avería</span>
+  <span>Última sincronización: <b class="mono" id="pie-sincronizacion">—</b></span>
+</footer>
+
+<!-- Modal de borrado -->
+<div class="velo" id="modal-borrado" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-borrado">
+    <h3 id="titulo-borrado">Eliminar aviso</h3>
+    <p>Se borrará también en Airtable. Esta acción no se puede deshacer.</p>
+    <div class="resumen-aviso" id="resumen-borrado"></div>
+    <input type="password" id="password-borrado" placeholder="Contraseña" autocomplete="current-password">
+    <div class="error-modal" id="error-borrado" hidden>
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+      <span id="error-borrado-texto"></span>
+    </div>
+    <div class="botones-modal">
+      <button class="btn" id="cancelar-borrado">Cancelar</button>
+      <button class="btn btn-peligro" id="confirmar-borrado">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Visor de imágenes -->
+<div class="visor" id="visor" hidden>
+  <button class="cerrar-visor" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m18 6-12 12M6 6l12 12"/></svg>
+  </button>
+  <img id="visor-img" alt="">
+</div>
+
+<script>
+/* ═══════════════ Configuración ═══════════════ */
+/* URL del Worker de Cloudflare que borra avisos. Guarda la contraseña y el
+   token de escritura de Airtable como secretos; aquí nunca hay credenciales. */
+const URL_WORKER = 'https://la-nevera-borrado.WORKER_SUBDOMINIO.workers.dev';
+
+/* ═══════════════ Estado ═══════════════ */
+let avisos = [];
+let generadoEn = null;
+let filtroEstado = 'todos';
+let textoBusqueda = '';
+let soloParo = false;
+const abiertos = new Set();
+let avisoABorrar = null;
+
+/* Contra la condición de carrera del botón Actualizar: cada petición lleva
+   número. Si vuelve una respuesta que ya no es la última, se descarta y no
+   pisa el mensaje del clic manual. */
+let secuencia = 0;
+let ultimaPintada = 0;
+
+const $ = (id) => document.getElementById(id);
+
+/* ═══════════════ Tema ═══════════════ */
+const ICONO_LUNA = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>';
+const ICONO_SOL  = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+
+function aplicarTema(tema){
+  document.documentElement.setAttribute('data-tema', tema);
+  $('icono-tema').innerHTML = tema === 'claro' ? ICONO_SOL : ICONO_LUNA;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', tema === 'claro' ? '#F2F5F9' : '#0B0F14');
+  try { localStorage.setItem('la-nevera-tema', tema); } catch {}
+}
+(function iniciarTema(){
+  let guardado = null;
+  try { guardado = localStorage.getItem('la-nevera-tema'); } catch {}
+  if (!guardado) {
+    guardado = window.matchMedia('(prefers-color-scheme: light)').matches ? 'claro' : 'oscuro';
+  }
+  aplicarTema(guardado);
+})();
+$('btn-tema').addEventListener('click', () => {
+  aplicarTema(document.documentElement.getAttribute('data-tema') === 'claro' ? 'oscuro' : 'claro');
+});
+
+/* Si algún día falta el archivo del logo, se enseña el nombre en texto
+   en vez de dejar un icono roto en la cabecera. */
+document.querySelectorAll('.logo').forEach((img) => {
+  img.addEventListener('error', () => {
+    document.querySelectorAll('.logo').forEach((o) => { o.style.display = 'none'; });
+    $('marca-nombre').hidden = false;
+  });
+});
+
+/* ═══════════════ Utilidades ═══════════════ */
+function esc(t){
+  return String(t ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c]);
+}
+function fechaLarga(iso){
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d)) return '—';
+  return d.toLocaleString('es-ES', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+}
+function fechaCorta(iso){
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d)) return '—';
+  return d.toLocaleString('es-ES', { day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit' });
+}
+function horaAhora(){
+  return new Date().toLocaleTimeString('es-ES', { hour:'2-digit', minute:'2-digit' });
+}
+function pesoLegible(b){
+  if (!b) return '';
+  if (b < 1024*1024) return Math.round(b/1024) + ' KB';
+  return (b/1024/1024).toFixed(1) + ' MB';
+}
+
+/* ═══════════════ Mensajes del botón Actualizar ═══════════════ */
+let temporizadorAviso = null;
+function mostrarAviso(texto, tipo = 'neutro', duracion = 4200){
+  const cont = $('aviso-refresco');
+  const caja = $('caja-refresco');
+  $('texto-refresco').textContent = texto;
+  caja.className = 'caja' + (tipo === 'neutro' ? '' : ' ' + tipo);
+  cont.classList.add('visible');
+  clearTimeout(temporizadorAviso);
+  if (duracion) temporizadorAviso = setTimeout(() => cont.classList.remove('visible'), duracion);
+}
+
+/* ═══════════════ Carga de datos ═══════════════ */
+async function cargar({ manual = false } = {}){
+  const miSecuencia = ++secuencia;
+  const boton = $('btn-actualizar');
+
+  if (manual){
+    boton.disabled = true;
+    $('icono-refrescar').classList.add('girando');
+    mostrarAviso('Comprobando…', 'neutro', 0);
+  }
+
+  try {
+    const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const datos = await r.json();
+
+    // Llegó tarde: ya hay una petición más nueva en marcha. Se descarta
+    // para no pisar su mensaje ni su pintado.
+    if (miSecuencia < ultimaPintada) return;
+    ultimaPintada = miSecuencia;
+
+    const huellaAntes = JSON.stringify(avisos.map(a => [a.id, a.estado, a.paro, a.descripcion, a.adjuntos.length]));
+    avisos = datos.avisos || [];
+    generadoEn = datos.generado || null;
+    const huellaDespues = JSON.stringify(avisos.map(a => [a.id, a.estado, a.paro, a.descripcion, a.adjuntos.length]));
+
+    pintar();
+    $('pie-sincronizacion').textContent = fechaCorta(generadoEn);
+
+    if (manual){
+      if (huellaAntes !== huellaDespues) mostrarAviso('¡Datos nuevos!', 'nuevo');
+      else mostrarAviso('Sin novedades · comprobado a las ' + horaAhora(), 'neutro');
+    }
+  } catch (e){
+    if (miSecuencia < ultimaPintada) return;
+    if (manual || avisos.length === 0){
+      mostrarAviso('No se pudieron cargar los avisos · ' + e.message, 'error', 6000);
+    }
+    if (avisos.length === 0){
+      $('lista').innerHTML = '';
+      $('vacio').hidden = false;
+      $('vacio-texto').textContent = 'No se pudieron cargar los avisos.';
+      $('vacio-sugerencia').hidden = false;
+      $('vacio-sugerencia').textContent = 'Comprueba la conexión y vuelve a pulsar Actualizar.';
+    }
+  } finally {
+    if (manual){
+      boton.disabled = false;
+      $('icono-refrescar').classList.remove('girando');
+    }
+  }
+}
+
+/* ═══════════════ Pintado ═══════════════ */
+function filtrados(){
+  const q = textoBusqueda.trim().toLowerCase();
+  return avisos.filter(a => {
+    if (filtroEstado !== 'todos' && a.estado !== filtroEstado) return false;
+    if (soloParo && !a.paro) return false;
+    if (!q) return true;
+    return [a.numero, a.cliente, a.emplazamiento, a.maquina, a.descripcion, a.identificado, a.estado]
+      .join(' ').toLowerCase().includes(q);
+  });
+}
+
+function pintar(){
+  $('dato-total').textContent = avisos.length;
+  $('dato-pendientes').textContent = avisos.filter(a => a.estado === 'Pendiente').length;
+  $('dato-paro').textContent = avisos.filter(a => a.paro).length;
+  $('c-todos').textContent = avisos.length;
+  $('c-pendiente').textContent = avisos.filter(a => a.estado === 'Pendiente').length;
+  $('c-terminado').textContent = avisos.filter(a => a.estado === 'Terminado').length;
+
+  const lista = filtrados();
+  const cont = $('lista');
+
+  if (lista.length === 0){
+    cont.innerHTML = '';
+    $('vacio').hidden = false;
+    const hayFiltros = filtroEstado !== 'todos' || soloParo || textoBusqueda.trim();
+    $('vacio-texto').textContent = avisos.length === 0
+      ? 'Todavía no hay ningún aviso registrado.'
+      : 'Ningún aviso coincide con los filtros.';
+    $('vacio-sugerencia').hidden = !hayFiltros;
+    $('vacio-sugerencia').textContent = 'Prueba a quitar algún filtro o a borrar la búsqueda.';
+    return;
+  }
+  $('vacio').hidden = true;
+  cont.innerHTML = lista.map(tarjeta).join('');
+}
+
+function tarjeta(a){
+  const abierto = abiertos.has(a.id);
+  const lugar = a.emplazamiento || '—';
+  const titulo = [a.cliente || 'Sin cliente', a.maquina].filter(Boolean).join(' · ');
+
+  return `
+  <article class="aviso ${abierto ? 'abierto' : ''} ${a.paro ? 'con-paro' : ''}" data-id="${esc(a.id)}">
+    <button class="cabecera-aviso" data-accion="alternar" aria-expanded="${abierto}">
+      <span class="numero mono">#${esc(a.numero ?? '—')}</span>
+      <span class="datos-aviso">
+        <span class="titulo-aviso">${esc(titulo)}</span>
+        <span class="sub-aviso">
+          <span>${esc(lugar)}</span><span class="sep">·</span>
+          <span class="mono">${esc(fechaCorta(a.fecha))}</span>
+        </span>
+      </span>
+      <span class="insignias">
+        ${a.paro ? '<span class="insignia paro">Parada<span> de producción</span></span>' : ''}
+        <span class="insignia ${a.estado === 'Terminado' ? 'terminado' : 'pendiente'}">${esc(a.estado)}</span>
+      </span>
+      <span class="flecha">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </span>
+    </button>
+    ${abierto ? detalle(a) : ''}
+  </article>`;
+}
+
+function detalle(a){
+  return `
+  <div class="detalle">
+    <div class="bloque">
+      <h4>Descripción</h4>
+      <div class="descripcion ${a.descripcion ? '' : 'vacia'}">${a.descripcion ? esc(a.descripcion) : 'Sin descripción.'}</div>
+    </div>
+
+    <div class="bloque">
+      <h4>Datos del aviso</h4>
+      <dl class="ficha">
+        <div class="campo"><dt>Cliente</dt><dd>${esc(a.cliente || '—')}</dd></div>
+        <div class="campo"><dt>Emplazamiento</dt><dd>${esc(a.emplazamiento || '—')}</dd></div>
+        <div class="campo"><dt>Máquina</dt><dd>${esc(a.maquina || '—')}</dd></div>
+        <div class="campo"><dt>Fecha y hora</dt><dd class="mono">${esc(fechaLarga(a.fecha))}</dd></div>
+        <div class="campo"><dt>Estado</dt><dd>${esc(a.estado)}</dd></div>
+        <div class="campo"><dt>Parada de producción</dt><dd>${a.paro ? 'Sí' : 'No'}</dd></div>
+        ${a.identificado ? `<div class="campo"><dt>Registrado por</dt><dd>${esc(a.identificado)}</dd></div>` : ''}
+      </dl>
+    </div>
+
+    ${a.adjuntos.length ? `
+    <div class="bloque">
+      <h4>Adjuntos (${a.adjuntos.length})</h4>
+      <div class="adjuntos">${a.adjuntos.map(adjunto).join('')}</div>
+      <p class="nota-caducidad">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Airtable caduca los enlaces de fotos y vídeos a las pocas horas. Si alguno no se ve, pulsa <b>Actualizar</b>: la sincronización los renueva.</span>
+      </p>
+    </div>` : ''}
+
+    <div class="pie-detalle">
+      <button class="btn btn-peligro" data-accion="borrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1l1-13M9 7V4h6v3"/></svg>
+        Eliminar aviso
+      </button>
+    </div>
+  </div>`;
+}
+
+/* Aquí está la diferencia importante: el tipo real del adjunto decide la
+   etiqueta HTML. Un vídeo se pinta con <video controls>, nunca como imagen. */
+function adjunto(ad){
+  const nombre = esc(ad.nombre);
+  const url = esc(ad.url);
+
+  if (ad.clase === 'imagen'){
+    return `<figure class="adjunto">
+      <img src="${url}" alt="${nombre}" loading="lazy" data-accion="ampliar" data-url="${url}">
+      <figcaption class="pie-adjunto">
+        <span class="nombre">${nombre}</span>
+        <span class="tipo-adjunto">Foto</span>
+      </figcaption>
+    </figure>`;
+  }
+
+  if (ad.clase === 'video'){
+    return `<figure class="adjunto">
+      <video controls preload="metadata" playsinline ${ad.miniatura ? `poster="${esc(ad.miniatura)}"` : ''}>
+        <source src="${url}" ${ad.mime ? `type="${esc(ad.mime)}"` : ''}>
+        Tu navegador no puede reproducir este vídeo. <a href="${url}">Descárgalo</a>.
+      </video>
+      <figcaption class="pie-adjunto">
+        <span class="nombre">${nombre}</span>
+        <span class="tipo-adjunto video">Vídeo${ad.tamano ? ' · ' + pesoLegible(ad.tamano) : ''}</span>
+      </figcaption>
+    </figure>`;
+  }
+
+  return `<div class="adjunto"><div class="adjunto-otro">
+    <a href="${url}" target="_blank" rel="noopener">${nombre}</a>
+  </div></div>`;
+}
+
+/* ═══════════════ Interacción ═══════════════ */
+$('lista').addEventListener('click', (e) => {
+  const ampliar = e.target.closest('[data-accion="ampliar"]');
+  if (ampliar){ abrirVisor(ampliar.dataset.url); return; }
+
+  const tarjetaEl = e.target.closest('.aviso');
+  if (!tarjetaEl) return;
+  const id = tarjetaEl.dataset.id;
+
+  if (e.target.closest('[data-accion="borrar"]')){ abrirBorrado(id); return; }
+  if (e.target.closest('[data-accion="alternar"]')){
+    abiertos.has(id) ? abiertos.delete(id) : abiertos.add(id);
+    pintar();
+  }
+});
+
+document.querySelectorAll('.pestana').forEach(p => {
+  p.addEventListener('click', () => {
+    document.querySelectorAll('.pestana').forEach(o => o.setAttribute('aria-selected', 'false'));
+    p.setAttribute('aria-selected', 'true');
+    filtroEstado = p.dataset.estado;
+    pintar();
+  });
+});
+
+$('busqueda').addEventListener('input', (e) => {
+  textoBusqueda = e.target.value;
+  $('limpiar-busqueda').hidden = !textoBusqueda;
+  pintar();
+});
+$('limpiar-busqueda').addEventListener('click', () => {
+  $('busqueda').value = ''; textoBusqueda = '';
+  $('limpiar-busqueda').hidden = true; pintar(); $('busqueda').focus();
+});
+$('solo-paro').addEventListener('change', (e) => { soloParo = e.target.checked; pintar(); });
+$('btn-actualizar').addEventListener('click', () => cargar({ manual: true }));
+
+/* ═══════════════ Visor de imágenes ═══════════════ */
+function abrirVisor(url){
+  $('visor-img').src = url;
+  $('visor').hidden = false;
+}
+$('visor').addEventListener('click', () => { $('visor').hidden = true; $('visor-img').src = ''; });
+
+/* ═══════════════ Borrado ═══════════════ */
+function abrirBorrado(id){
+  const a = avisos.find(x => x.id === id);
+  if (!a) return;
+  avisoABorrar = a;
+  $('resumen-borrado').innerHTML =
+    `<b class="mono">#${esc(a.numero ?? '—')}</b> · ${esc(a.cliente || 'Sin cliente')}` +
+    (a.maquina ? ` · ${esc(a.maquina)}` : '');
+  $('password-borrado').value = '';
+  $('error-borrado').hidden = true;
+  $('modal-borrado').hidden = false;
+  setTimeout(() => $('password-borrado').focus(), 60);
+}
+function cerrarBorrado(){ $('modal-borrado').hidden = true; avisoABorrar = null; }
+$('cancelar-borrado').addEventListener('click', cerrarBorrado);
+$('modal-borrado').addEventListener('click', (e) => { if (e.target === $('modal-borrado')) cerrarBorrado(); });
+$('password-borrado').addEventListener('keydown', (e) => { if (e.key === 'Enter') confirmarBorrado(); });
+$('confirmar-borrado').addEventListener('click', confirmarBorrado);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (!$('visor').hidden){ $('visor').hidden = true; $('visor-img').src = ''; }
+  else if (!$('modal-borrado').hidden) cerrarBorrado();
+});
+
+async function confirmarBorrado(){
+  if (!avisoABorrar) return;
+  const password = $('password-borrado').value;
+  if (!password){ mostrarErrorModal('Escribe la contraseña.'); return; }
+
+  const boton = $('confirmar-borrado');
+  boton.disabled = true;
+  boton.textContent = 'Eliminando…';
+  $('error-borrado').hidden = true;
+
+  try {
+    const r = await fetch(URL_WORKER, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password, recordId: avisoABorrar.id }),
+    });
+    const datos = await r.json().catch(() => ({}));
+
+    if (!r.ok || !datos.ok){
+      mostrarErrorModal(datos.error || `No se pudo eliminar (error ${r.status}).`);
+      return;
+    }
+
+    // Se quita ya de la vista; la sincronización lo confirmará en unos minutos.
+    avisos = avisos.filter(x => x.id !== avisoABorrar.id);
+    abiertos.delete(avisoABorrar.id);
+    cerrarBorrado();
+    pintar();
+    mostrarAviso('Aviso eliminado en Airtable.', 'nuevo');
+  } catch (e){
+    mostrarErrorModal('No se pudo contactar con el servidor de borrado.');
+  } finally {
+    boton.disabled = false;
+    boton.textContent = 'Eliminar';
+  }
+}
+function mostrarErrorModal(texto){
+  $('error-borrado-texto').textContent = texto;
+  $('error-borrado').hidden = false;
+}
+
+/* ═══════════════ Arranque ═══════════════ */
+cargar();
+// Comprobación silenciosa cada 2 minutos. Como lleva número de secuencia,
+// nunca pisa el mensaje de un clic manual.
+setInterval(() => { if (!document.hidden) cargar(); }, 120000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) cargar(); });
+</script>
+</body>
+</html>

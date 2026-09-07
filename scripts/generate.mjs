@@ -91,6 +91,9 @@ function huella(avisos) {
 
 const registros = await traerTodos();
 const avisos = registros
+  // Los avisos con fecha en "eliminacion" los ha ocultado alguien desde la web.
+  // No se borran de Airtable: simplemente no salen aquí.
+  .filter((rec) => !(rec.fields || {})['eliminacion'])
   .map(mapear)
   .sort((a, b) => (b.numero ?? 0) - (a.numero ?? 0));
 

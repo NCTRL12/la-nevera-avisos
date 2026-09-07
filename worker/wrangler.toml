@@ -2,13 +2,7 @@ name = "la-nevera-borrado"
 main = "src/index.js"
 compatibility_date = "2024-11-01"
 
-# Dominios desde los que se aceptan peticiones (CORS).
-# Si cambias el nombre del repo o añades un dominio propio, edítalo aquí.
 [vars]
 ORIGENES_PERMITIDOS = "https://nctrl12.github.io"
-
-# Los secretos NO van aquí. Se ponen en el panel de Cloudflare:
-#   PASSWORD_BORRADO   -> la contraseña que elijas
-#   AIRTABLE_TOKEN_RW  -> token de Airtable CON permiso de escritura
-#   AIRTABLE_BASE_ID   -> appOANzgalvLugPP1
-#   AIRTABLE_TABLE_ID  -> tblj3eagIgj8WOc5d
+AIRTABLE_BASE_ID = "appOANzgalvLugPP1"
+AIRTABLE_TABLE_ID = "tblj3eagIgj8WOc5d"

@@ -6,3 +6,5 @@ compatibility_date = "2024-11-01"
 ORIGENES_PERMITIDOS = "https://nctrl12.github.io"
 AIRTABLE_BASE_ID = "appOANzgalvLugPP1"
 AIRTABLE_TABLE_ID = "tblj3eagIgj8WOc5d"
+
+# El token de escritura (AIRTABLE_TOKEN_RW) va como secreto en Cloudflare, nunca aqui.

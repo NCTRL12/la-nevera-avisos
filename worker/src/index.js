@@ -1,9 +1,13 @@
 /**
- * Worker de borrado para la web de avisos de La Nevera.
+ * Worker de ocultado de avisos para la web de La Nevera.
  *
- * Existe por una razón: la web es pública, así que la contraseña y el token
- * de Airtable con permiso de escritura no pueden estar en el HTML. Viven aquí,
- * como secretos de Cloudflare, y este Worker es el único que los ve.
+ * La web es pública y no pide contraseña, así que este Worker NO borra nada
+ * de forma definitiva: rellena el campo "eliminacion" del registro con la
+ * fecha de hoy. La web deja de mostrar los avisos que tienen ese campo.
+ *
+ * Si algún día se recupera un aviso, basta con vaciar esa casilla en Airtable.
+ * El token de Airtable con permiso de escritura vive aquí como secreto de
+ * Cloudflare y nunca sale de este Worker.
  */
 
 function cabecerasCors(request, env) {
@@ -30,17 +34,6 @@ function json(cuerpo, estado, cors) {
   });
 }
 
-/** Comparación en tiempo constante, para no filtrar la contraseña por el tiempo de respuesta. */
-function iguales(a, b) {
-  const enc = new TextEncoder();
-  const x = enc.encode(a || '');
-  const y = enc.encode(b || '');
-  if (x.length !== y.length) return false;
-  let dif = 0;
-  for (let i = 0; i < x.length; i++) dif |= x[i] ^ y[i];
-  return dif === 0;
-}
-
 export default {
   async fetch(request, env) {
     const cors = cabecerasCors(request, env);
@@ -52,6 +45,9 @@ export default {
       return json({ ok: false, error: 'Método no permitido' }, 405, cors);
     }
 
+    // No es autenticación de verdad (un script puede saltárselo), pero corta
+    // el uso casual desde otras webs. La red de seguridad real es que esto
+    // no borra: marca. Todo se puede deshacer desde Airtable.
     const permitidos = (env.ORIGENES_PERMITIDOS || '').split(',').map((o) => o.trim());
     const origen = request.headers.get('Origin') || '';
     if (origen && !permitidos.includes(origen)) {
@@ -65,33 +61,31 @@ export default {
       return json({ ok: false, error: 'Petición mal formada' }, 400, cors);
     }
 
-    const { password, recordId } = cuerpo || {};
-
-    if (!iguales(password, env.PASSWORD_BORRADO)) {
-      // Pequeño retardo para que probar contraseñas a lo bruto sea incómodo.
-      await new Promise((r) => setTimeout(r, 700));
-      return json({ ok: false, error: 'Contraseña incorrecta' }, 401, cors);
-    }
-
+    const { recordId } = cuerpo || {};
     if (!/^rec[A-Za-z0-9]{14}$/.test(recordId || '')) {
       return json({ ok: false, error: 'Identificador de aviso no válido' }, 400, cors);
     }
 
+    const hoy = new Date().toISOString().slice(0, 10);
     const url = `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${env.AIRTABLE_TABLE_ID}/${recordId}`;
+
     const r = await fetch(url, {
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${env.AIRTABLE_TOKEN_RW}` },
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${env.AIRTABLE_TOKEN_RW}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fields: { eliminacion: hoy } }),
     });
 
     if (!r.ok) {
       const detalle = await r.text();
       return json(
-        { ok: false, error: `Airtable no pudo borrar el aviso (${r.status})`, detalle },
-        502,
-        cors
+        { ok: false, error: `Airtable no aceptó el cambio (${r.status})`, detalle },
+        502, cors
       );
     }
 
-    return json({ ok: true, borrado: recordId }, 200, cors);
+    return json({ ok: true, eliminado: recordId, fecha: hoy }, 200, cors);
   },
 };

@@ -18,9 +18,24 @@ Airtable  ──(cada 5 min)──►  GitHub Actions  ──►  data.json  ─
    y escribe `data.json`. Si los datos no han cambiado **no toca el archivo**,
    así que no hay commit ni despliegue innecesarios.
 3. **GitHub Pages** sirve `index.html`, que lee `data.json`.
-4. **Cloudflare Worker** (`worker/`) es lo único que ve la contraseña de borrado
-   y el token de Airtable con permiso de escritura. La web es pública: ahí nunca
-   hay credenciales.
+4. **Cloudflare Worker** (`worker/`) es lo único que ve el token de Airtable con
+   permiso de escritura. La web es pública: ahí nunca hay credenciales.
+
+### Sobre el botón "Eliminar aviso"
+
+No pide contraseña, a propósito: el equipo lo usa desde el móvil y tener que
+teclear algo cada vez era un incordio. A cambio, **no borra nada de verdad**:
+rellena el campo `eliminacion` del registro con la fecha de hoy, y la
+sincronización deja de incluir esos avisos. En la web desaparece; en Airtable
+sigue estando todo.
+
+Para recuperar un aviso, basta con **vaciar la casilla `eliminacion`** en
+Airtable. En la siguiente sincronización vuelve a salir.
+
+Consecuencia que conviene tener clara: como no hay contraseña, cualquiera que
+llegue a la web puede ocultar avisos. Nada se pierde y se deshace en un
+segundo, pero si algún día molesta, en `worker/src/index.js` está preparado el
+sitio donde volver a exigir una clave.
 
 ## Archivos
 
@@ -30,7 +45,7 @@ Airtable  ──(cada 5 min)──►  GitHub Actions  ──►  data.json  ─
 | `data.json` | Los avisos. Lo regenera GitHub Actions, no se toca a mano |
 | `scripts/generate.mjs` | Lee Airtable y genera `data.json` |
 | `.github/workflows/sincronizar-airtable.yml` | El cron de cada 5 minutos |
-| `worker/src/index.js` | El Worker de Cloudflare que borra avisos |
+| `worker/src/index.js` | El Worker de Cloudflare que oculta avisos |
 | `worker/wrangler.toml` | Configuración del Worker (aquí NO van secretos) |
 | `assets/logo.png` | Logo para modo claro |
 | `assets/logo-oscuro.png` | Logo para modo oscuro (logotipo en blanco) |
@@ -47,10 +62,10 @@ Nunca están en el código. Se ponen en el panel correspondiente:
 **En Cloudflare** (el Worker → Settings → Variables and Secrets):
 
 - `AIRTABLE_TOKEN_RW` — token de Airtable con permiso de **escritura**
-  (`data.records:write`), necesario para borrar registros.
-- `PASSWORD_BORRADO` — la contraseña que protege el botón "Eliminar aviso".
+  (`data.records:write`), necesario para marcar el campo `eliminacion`.
 - `AIRTABLE_BASE_ID` — `appOANzgalvLugPP1`
 - `AIRTABLE_TABLE_ID` — `tblj3eagIgj8WOc5d`
+- `ORIGENES_PERMITIDOS` — ya viene en `wrangler.toml`, no es secreto.
 
 ## Detalles que conviene recordar
 

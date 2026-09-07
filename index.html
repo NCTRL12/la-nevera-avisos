@@ -281,12 +281,6 @@ footer{
   background:var(--superficie-2); border:1px solid var(--borde); border-radius:var(--radio-s);
   padding:10px 13px; margin-bottom:15px; font-size:13.5px;
 }
-.modal input[type="password"]{
-  width:100%; padding:11px 13px; font:inherit; font-size:15px;
-  background:var(--superficie-2); color:var(--texto);
-  border:1px solid var(--borde-solido); border-radius:var(--radio-s); outline:none;
-}
-.modal input[type="password"]:focus{border-color:var(--acento-borde); box-shadow:0 0 0 3px var(--acento-tinte)}
 .error-modal{color:var(--alerta); font-size:13px; font-weight:600; margin-top:9px; display:flex; gap:6px; align-items:center}
 .botones-modal{display:flex; gap:9px; justify-content:flex-end; margin-top:18px}
 
@@ -375,9 +369,8 @@ footer{
 <div class="velo" id="modal-borrado" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-borrado">
     <h3 id="titulo-borrado">Eliminar aviso</h3>
-    <p>Se borrará también en Airtable. Esta acción no se puede deshacer.</p>
+    <p>El aviso dejará de aparecer en la web. Queda guardado en Airtable por si hay que recuperarlo.</p>
     <div class="resumen-aviso" id="resumen-borrado"></div>
-    <input type="password" id="password-borrado" placeholder="Contraseña" autocomplete="current-password">
     <div class="error-modal" id="error-borrado" hidden>
       <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
       <span id="error-borrado-texto"></span>
@@ -401,7 +394,7 @@ footer{
 /* ═══════════════ Configuración ═══════════════ */
 /* URL del Worker de Cloudflare que borra avisos. Guarda la contraseña y el
    token de escritura de Airtable como secretos; aquí nunca hay credenciales. */
-const URL_WORKER = 'https://la-nevera-borrado.WORKER_SUBDOMINIO.workers.dev';
+const URL_WORKER = 'https://la-nevera-borrado.elgrandonfrancisco.workers.dev';
 
 /* ═══════════════ Estado ═══════════════ */
 let avisos = [];
@@ -735,15 +728,13 @@ function abrirBorrado(id){
   $('resumen-borrado').innerHTML =
     `<b class="mono">#${esc(a.numero ?? '—')}</b> · ${esc(a.cliente || 'Sin cliente')}` +
     (a.maquina ? ` · ${esc(a.maquina)}` : '');
-  $('password-borrado').value = '';
   $('error-borrado').hidden = true;
   $('modal-borrado').hidden = false;
-  setTimeout(() => $('password-borrado').focus(), 60);
+  setTimeout(() => $('confirmar-borrado').focus(), 60);
 }
 function cerrarBorrado(){ $('modal-borrado').hidden = true; avisoABorrar = null; }
 $('cancelar-borrado').addEventListener('click', cerrarBorrado);
 $('modal-borrado').addEventListener('click', (e) => { if (e.target === $('modal-borrado')) cerrarBorrado(); });
-$('password-borrado').addEventListener('keydown', (e) => { if (e.key === 'Enter') confirmarBorrado(); });
 $('confirmar-borrado').addEventListener('click', confirmarBorrado);
 
 document.addEventListener('keydown', (e) => {
@@ -754,8 +745,6 @@ document.addEventListener('keydown', (e) => {
 
 async function confirmarBorrado(){
   if (!avisoABorrar) return;
-  const password = $('password-borrado').value;
-  if (!password){ mostrarErrorModal('Escribe la contraseña.'); return; }
 
   const boton = $('confirmar-borrado');
   boton.disabled = true;
@@ -766,7 +755,7 @@ async function confirmarBorrado(){
     const r = await fetch(URL_WORKER, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password, recordId: avisoABorrar.id }),
+      body: JSON.stringify({ recordId: avisoABorrar.id }),
     });
     const datos = await r.json().catch(() => ({}));
 
@@ -780,7 +769,7 @@ async function confirmarBorrado(){
     abiertos.delete(avisoABorrar.id);
     cerrarBorrado();
     pintar();
-    mostrarAviso('Aviso eliminado en Airtable.', 'nuevo');
+    mostrarAviso('Aviso eliminado. Se puede recuperar desde Airtable.', 'nuevo');
   } catch (e){
     mostrarErrorModal('No se pudo contactar con el servidor de borrado.');
   } finally {

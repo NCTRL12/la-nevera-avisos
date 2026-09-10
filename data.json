@@ -1,7 +1,35 @@
 {
-  "generado": "2026-09-07T17:46:38.018Z",
-  "total": 7,
+  "generado": "2026-09-10T10:40:02.039Z",
+  "total": 9,
   "avisos": [
+    {
+      "id": "recgxqkFCadlWdosj",
+      "numero": 81,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Manolas Cardenal Herrero 8",
+      "maquina": "Aire acondicionado",
+      "fecha": "2026-09-10T08:00:03.873Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "No echa aire frio",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "receBwLdUqWHp5SQ5",
+      "numero": 80,
+      "cliente": "",
+      "emplazamiento": "bodegas mezquita",
+      "maquina": "",
+      "fecha": "2026-09-10T06:56:18.679Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "",
+      "identificado": "",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recDgIAUzL7JF8kD9",
       "numero": 79,

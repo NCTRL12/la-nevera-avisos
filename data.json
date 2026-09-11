@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-10T10:40:02.039Z",
-  "total": 9,
+  "generado": "2026-09-11T09:39:24.777Z",
+  "total": 10,
   "avisos": [
+    {
+      "id": "reciVZXaXpD2hKubi",
+      "numero": 82,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Ribera",
+      "maquina": "Lavavasos",
+      "fecha": "2026-09-11T08:03:25.527Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "David hay que arreglar el lavavasos de Ribera el que cambiamos antes del verano",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recgxqkFCadlWdosj",
       "numero": 81,

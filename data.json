@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-11T09:39:24.777Z",
-  "total": 10,
+  "generado": "2026-09-12T15:43:30.789Z",
+  "total": 11,
   "avisos": [
+    {
+      "id": "rec5tlKiCfdQrQ3lg",
+      "numero": 83,
+      "cliente": "Angela",
+      "emplazamiento": "Regadera",
+      "maquina": "Horno",
+      "fecha": "2026-09-12T15:42:31.986Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "El desagüe al mover el horno no está bien encajado, y al poner el vapor o lavar,cae agua por el desagüe y por la puerta. Esta calando en las cocheras",
+      "identificado": "Adrian Caballero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "reciVZXaXpD2hKubi",
       "numero": 82,

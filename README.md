@@ -7,19 +7,30 @@ ejecutándose, ni ninguna suscripción de IA.
 ## Cómo funciona
 
 ```
-Airtable  ──(cada 5 min)──►  GitHub Actions  ──►  data.json  ──►  GitHub Pages
-   ▲                                                                    │
-   └──────────────  Cloudflare Worker  ◄────── botón "Eliminar" ─────────┘
-                    (contraseña + token de escritura)
+                    ┌──────────  Cloudflare Worker  ◄──── la web, al abrirla
+Airtable  ◄─────────┤            (token de Airtable)      y al pulsar botones
+   ▲                └──────────────────────────────►  avisos en vivo
+   │
+   └──(de vez en cuando)──►  GitHub Actions  ──►  data.json  ──►  GitHub Pages
+                                                  (copia de respaldo)
 ```
 
 1. **Airtable** es la base de datos. El equipo sigue metiendo los avisos ahí.
-2. **GitHub Actions** ejecuta `scripts/generate.mjs` cada 5 minutos: lee Airtable
-   y escribe `data.json`. Si los datos no han cambiado **no toca el archivo**,
-   así que no hay commit ni despliegue innecesarios.
-3. **GitHub Pages** sirve `index.html`, que lee `data.json`.
-4. **Cloudflare Worker** (`worker/`) es lo único que ve el token de Airtable con
-   permiso de escritura. La web es pública: ahí nunca hay credenciales.
+2. **Cloudflare Worker** (`worker/`) es lo único que ve el token de Airtable.
+   La web le pide los avisos cada vez que se abre o se pulsa *Actualizar*, así
+   que lo que se ve **es lo que hay en Airtable en ese momento**. También es
+   quien ejecuta ocultar, terminar y reabrir. La web es pública: ahí nunca hay
+   credenciales.
+3. **GitHub Actions** ejecuta `scripts/generate.mjs` y escribe `data.json`. Si
+   los datos no han cambiado **no toca el archivo**, así que no hay commit ni
+   despliegue innecesarios.
+4. **GitHub Pages** sirve `index.html`. `data.json` es solo la **red de
+   seguridad**: si el Worker no contesta, la web tira de esa copia y lo dice en
+   el pie ("copia guardada") en vez de quedarse en blanco.
+
+> Ojo con el cron: GitHub estrangula los `schedule` de 5 minutos. En la
+> práctica esto se ejecuta cada una o dos horas. Por eso la web no depende de
+> él para estar al día — para eso está el Worker.
 
 ### Marcar un aviso como terminado
 
@@ -27,9 +38,10 @@ El campo `Estado` de Airtable manda: la web solo lo refleja. Se puede cambiar
 desde Airtable como siempre, o desde la propia web con el botón **"Marcar como
 terminado"**, que es reversible con **"Volver a pendiente"**.
 
-El Worker solo sabe escribir tres cosas concretas (`eliminacion`, y `Estado` a
-Terminado o a Pendiente). Cualquier otra petición la rechaza, así que aunque la
-web sea pública nadie puede tocar el resto de campos ni borrar un registro.
+El Worker solo sabe hacer cuatro cosas: **leer** los avisos, y escribir tres
+campos concretos (`eliminacion`, y `Estado` a Terminado o a Pendiente).
+Cualquier otra petición la rechaza, así que aunque la web sea pública nadie
+puede tocar el resto de campos ni borrar un registro.
 
 ### Sobre el botón "Eliminar aviso"
 
@@ -40,7 +52,7 @@ sincronización deja de incluir esos avisos. En la web desaparece; en Airtable
 sigue estando todo.
 
 Para recuperar un aviso, basta con **vaciar la casilla `eliminacion`** en
-Airtable. En la siguiente sincronización vuelve a salir.
+Airtable. Vuelve a salir en cuanto se recargue la web.
 
 Consecuencia que conviene tener clara: como no hay contraseña, cualquiera que
 llegue a la web puede ocultar avisos. Nada se pierde y se deshace en un
@@ -52,10 +64,10 @@ sitio donde volver a exigir una clave.
 | Archivo | Para qué sirve |
 |---|---|
 | `index.html` | La web entera (un solo archivo) |
-| `data.json` | Los avisos. Lo regenera GitHub Actions, no se toca a mano |
+| `data.json` | Copia de respaldo de los avisos. La regenera GitHub Actions, no se toca a mano |
 | `scripts/generate.mjs` | Lee Airtable y genera `data.json` |
 | `.github/workflows/sincronizar-airtable.yml` | El cron de cada 5 minutos |
-| `worker/src/index.js` | El Worker de Cloudflare que oculta avisos |
+| `worker/src/index.js` | El Worker de Cloudflare: lee los avisos en vivo y aplica ocultar/terminar/reabrir |
 | `worker/wrangler.toml` | Configuración del Worker (aquí NO van secretos) |
 | `assets/logo.png` | Logo para modo claro |
 | `assets/logo-oscuro.png` | Logo para modo oscuro (logotipo en blanco) |

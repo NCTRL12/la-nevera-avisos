@@ -1,9 +1,12 @@
 /**
- * Worker de ocultado de avisos para la web de La Nevera.
+ * Worker de La Nevera: lectura en vivo + acciones sobre los avisos.
  *
  * La web es pública y no pide contraseña, así que este Worker solo sabe hacer
- * tres cosas concretas, y ninguna destruye nada:
+ * cuatro cosas concretas, y ninguna destruye nada:
  *
+ *   leer      -> devuelve los avisos tal cual están AHORA en Airtable, con el
+ *                mismo formato que data.json. Es lo que hace que un borrado o
+ *                un "terminado" se vea al instante, sin esperar a GitHub.
  *   ocultar   -> rellena "eliminacion" con la fecha de hoy; la web deja de
  *                mostrar el aviso. Se recupera vaciando esa casilla en Airtable.
  *   terminar  -> pone Estado = "Terminado".
@@ -12,8 +15,7 @@
  * Cualquier otra cosa se rechaza. Aunque alguien de fuera llame a este Worker,
  * no puede escribir en ningún otro campo ni borrar un registro.
  *
- * El token de Airtable con permiso de escritura vive aquí como secreto de
- * Cloudflare y nunca sale de este Worker.
+ * El token de Airtable vive aquí como secreto de Cloudflare y nunca sale.
  */
 
 function cabecerasCors(request, env) {
@@ -36,9 +38,82 @@ function cabecerasCors(request, env) {
 function json(cuerpo, estado, cors) {
   return new Response(JSON.stringify(cuerpo), {
     status: estado,
-    headers: { 'Content-Type': 'application/json; charset=utf-8', ...cors },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...cors,
+    },
   });
 }
+
+/* ---------- Lectura ---------- */
+
+/** Decide si un adjunto es foto, vídeo u otra cosa. Igual que generate.mjs. */
+function claseAdjunto(a) {
+  const mime = (a.type || '').toLowerCase();
+  if (mime.startsWith('image/')) return 'imagen';
+  if (mime.startsWith('video/')) return 'video';
+  const ext = (a.filename || '').toLowerCase().split('.').pop();
+  if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'heic', 'bmp'].includes(ext)) return 'imagen';
+  if (['mp4', 'mov', 'm4v', 'webm', 'avi', 'mkv', '3gp', 'qt'].includes(ext)) return 'video';
+  return 'otro';
+}
+
+/** Un registro de Airtable -> un aviso de la web. Igual que generate.mjs. */
+function mapear(rec) {
+  const f = rec.fields || {};
+  const adjuntos = (f['Foto/Vídeo'] || []).map((a) => ({
+    nombre: a.filename || 'adjunto',
+    url: a.url,
+    mime: a.type || '',
+    clase: claseAdjunto(a),
+    miniatura: a.thumbnails?.large?.url || a.thumbnails?.small?.url || null,
+    tamano: a.size || 0,
+  }));
+
+  return {
+    id: rec.id,
+    numero: f['ID'] ?? null,
+    cliente: (f['Cliente'] || '').trim(),
+    emplazamiento: (f['Lugar'] || f['Emplazamiento'] || '').trim(),
+    maquina: (f['Máquina/Dispositivo'] || '').trim(),
+    fecha: f['Fecha/Hora'] || null,
+    estado: (f['Estado'] || 'Pendiente').trim(),
+    paro: (f['Avería con paro'] || '') === 'Sí',
+    descripcion: (f['Descripción'] || '').trim(),
+    identificado: (f['Identifícate'] || '').trim(),
+    urlPublica: (f['URL Imagen Pública'] || '').trim(),
+    adjuntos,
+  };
+}
+
+async function leerAvisos(env) {
+  const registros = [];
+  let offset;
+  do {
+    const url = new URL(`https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${env.AIRTABLE_TABLE_ID}`);
+    url.searchParams.set('pageSize', '100');
+    if (offset) url.searchParams.set('offset', offset);
+
+    const r = await fetch(url, {
+      headers: { Authorization: `Bearer ${env.AIRTABLE_TOKEN_RW}` },
+    });
+    if (!r.ok) {
+      throw new Error(`Airtable respondió ${r.status}`);
+    }
+    const datos = await r.json();
+    registros.push(...datos.records);
+    offset = datos.offset;
+  } while (offset);
+
+  return registros
+    // Los avisos con fecha en "eliminacion" los ha ocultado alguien desde la web.
+    .filter((rec) => !(rec.fields || {})['eliminacion'])
+    .map(mapear)
+    .sort((a, b) => (b.numero ?? 0) - (a.numero ?? 0));
+}
+
+/* ---------- Punto de entrada ---------- */
 
 export default {
   async fetch(request, env) {
@@ -68,6 +143,20 @@ export default {
     }
 
     const { recordId, accion } = cuerpo || {};
+
+    // Lectura en vivo: no lleva recordId y no escribe nada.
+    if (accion === 'leer') {
+      try {
+        const avisos = await leerAvisos(env);
+        return json(
+          { ok: true, generado: new Date().toISOString(), total: avisos.length, avisos },
+          200, cors
+        );
+      } catch (err) {
+        return json({ ok: false, error: `No se pudo leer Airtable · ${err.message}` }, 502, cors);
+      }
+    }
+
     if (!/^rec[A-Za-z0-9]{14}$/.test(recordId || '')) {
       return json({ ok: false, error: 'Identificador de aviso no válido' }, 400, cors);
     }

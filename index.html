@@ -487,6 +487,49 @@ function mostrarAviso(texto, tipo = 'neutro', duracion = 4200){
 }
 
 /* ═══════════════ Carga de datos ═══════════════ */
+/* Hay dos fuentes, y se usan por este orden:
+
+   1. El Worker, que le pregunta a Airtable en ese mismo momento. Es lo que
+      hace que borrar un aviso o marcarlo como terminado se vea al recargar,
+      sin esperar a que GitHub regenere nada.
+   2. data.json, el archivo que GitHub reescribe cada pocas horas. Solo entra
+      si el Worker no contesta, para que la web nunca se quede en blanco. */
+const ESPERA_WORKER = 8000;
+
+async function traerDelWorker(){
+  const corte = new AbortController();
+  const reloj = setTimeout(() => corte.abort(), ESPERA_WORKER);
+  try {
+    const r = await fetch(URL_WORKER, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ accion: 'leer' }),
+      signal: corte.signal,
+      cache: 'no-store',
+    });
+    const datos = await r.json().catch(() => ({}));
+    if (!r.ok || !datos.ok) throw new Error(datos.error || ('HTTP ' + r.status));
+    return { datos, envivo: true };
+  } finally {
+    clearTimeout(reloj);
+  }
+}
+
+async function traerDelArchivo(){
+  const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return { datos: await r.json(), envivo: false };
+}
+
+async function traerDatos(){
+  try {
+    return await traerDelWorker();
+  } catch (e){
+    console.warn('Lectura en vivo no disponible, se usa data.json ·', e.message);
+    return await traerDelArchivo();
+  }
+}
+
 async function cargar({ manual = false } = {}){
   const miSecuencia = ++secuencia;
   const boton = $('btn-actualizar');
@@ -498,9 +541,7 @@ async function cargar({ manual = false } = {}){
   }
 
   try {
-    const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const datos = await r.json();
+    const { datos, envivo } = await traerDatos();
 
     // Llegó tarde: ya hay una petición más nueva en marcha. Se descarta
     // para no pisar su mensaje ni su pintado.
@@ -513,7 +554,7 @@ async function cargar({ manual = false } = {}){
     const huellaDespues = JSON.stringify(avisos.map(a => [a.id, a.estado, a.paro, a.descripcion, a.adjuntos.length]));
 
     pintar();
-    $('pie-sincronizacion').textContent = fechaCorta(generadoEn);
+    $('pie-sincronizacion').textContent = fechaCorta(generadoEn) + (envivo ? '' : ' · copia guardada');
 
     if (manual){
       if (huellaAntes !== huellaDespues) mostrarAviso('¡Datos nuevos!', 'nuevo');

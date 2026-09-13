@@ -21,6 +21,16 @@ Airtable  ──(cada 5 min)──►  GitHub Actions  ──►  data.json  ─
 4. **Cloudflare Worker** (`worker/`) es lo único que ve el token de Airtable con
    permiso de escritura. La web es pública: ahí nunca hay credenciales.
 
+### Marcar un aviso como terminado
+
+El campo `Estado` de Airtable manda: la web solo lo refleja. Se puede cambiar
+desde Airtable como siempre, o desde la propia web con el botón **"Marcar como
+terminado"**, que es reversible con **"Volver a pendiente"**.
+
+El Worker solo sabe escribir tres cosas concretas (`eliminacion`, y `Estado` a
+Terminado o a Pendiente). Cualquier otra petición la rechaza, así que aunque la
+web sea pública nadie puede tocar el resto de campos ni borrar un registro.
+
 ### Sobre el botón "Eliminar aviso"
 
 No pide contraseña, a propósito: el equipo lo usa desde el móvil y tener que

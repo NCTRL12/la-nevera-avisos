@@ -244,7 +244,10 @@ main{max-width:1080px; margin:0 auto; padding:18px 16px 56px}
 }
 .nota-caducidad svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
 
-.pie-detalle{display:flex; justify-content:flex-end; margin-top:16px; padding-top:14px; border-top:1px solid var(--borde)}
+.pie-detalle{display:flex; gap:9px; justify-content:flex-end; flex-wrap:wrap; margin-top:16px; padding-top:14px; border-top:1px solid var(--borde)}
+.btn-ok{background:var(--ok-tinte); border-color:var(--ok-borde); color:var(--ok)}
+.btn-ok:hover{background:color-mix(in srgb,var(--ok-tinte) 60%, var(--ok) 12%)}
+@media(max-width:520px){ .pie-detalle{flex-direction:column-reverse} .pie-detalle .btn{width:100%} }
 
 /* Estados vacíos */
 .vacio{text-align:center; padding:56px 20px; color:var(--texto-tenue)}
@@ -634,6 +637,15 @@ function detalle(a){
     </div>` : ''}
 
     <div class="pie-detalle">
+      ${a.estado === 'Terminado' ? `
+      <button class="btn" data-accion="reabrir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>
+        Volver a pendiente
+      </button>` : `
+      <button class="btn btn-ok" data-accion="terminar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>
+        Marcar como terminado
+      </button>`}
       <button class="btn btn-peligro" data-accion="borrar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1l1-13M9 7V4h6v3"/></svg>
         Eliminar aviso
@@ -685,6 +697,9 @@ $('lista').addEventListener('click', (e) => {
   if (!tarjetaEl) return;
   const id = tarjetaEl.dataset.id;
 
+  const btnEstado = e.target.closest('[data-accion="terminar"], [data-accion="reabrir"]');
+  if (btnEstado){ cambiarEstado(id, btnEstado.dataset.accion, btnEstado); return; }
+
   if (e.target.closest('[data-accion="borrar"]')){ abrirBorrado(id); return; }
   if (e.target.closest('[data-accion="alternar"]')){
     abiertos.has(id) ? abiertos.delete(id) : abiertos.add(id);
@@ -719,6 +734,42 @@ function abrirVisor(url){
   $('visor').hidden = false;
 }
 $('visor').addEventListener('click', () => { $('visor').hidden = true; $('visor-img').src = ''; });
+
+/* ═══════════════ Terminar / reabrir ═══════════════ */
+/* Sin confirmación a propósito: es un cambio reversible desde el propio botón.
+   Se pinta el cambio en cuanto Airtable lo confirma, sin esperar a la
+   sincronización, para que desde el móvil sea instantáneo. */
+async function cambiarEstado(id, accion, boton){
+  const a = avisos.find(x => x.id === id);
+  if (!a) return;
+
+  const contenidoOriginal = boton.innerHTML;
+  boton.disabled = true;
+  boton.textContent = accion === 'terminar' ? 'Guardando…' : 'Reabriendo…';
+
+  try {
+    const r = await fetch(URL_WORKER, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ recordId: id, accion }),
+    });
+    const datos = await r.json().catch(() => ({}));
+    if (!r.ok || !datos.ok) throw new Error(datos.error || `error ${r.status}`);
+
+    a.estado = accion === 'terminar' ? 'Terminado' : 'Pendiente';
+    pintar();
+    mostrarAviso(
+      accion === 'terminar'
+        ? `Aviso #${a.numero} marcado como terminado.`
+        : `Aviso #${a.numero} vuelve a estar pendiente.`,
+      'nuevo'
+    );
+  } catch (err){
+    boton.disabled = false;
+    boton.innerHTML = contenidoOriginal;
+    mostrarAviso('No se pudo cambiar el estado · ' + err.message, 'error', 6000);
+  }
+}
 
 /* ═══════════════ Borrado ═══════════════ */
 function abrirBorrado(id){

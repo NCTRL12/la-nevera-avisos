@@ -1,11 +1,17 @@
 /**
  * Worker de ocultado de avisos para la web de La Nevera.
  *
- * La web es pública y no pide contraseña, así que este Worker NO borra nada
- * de forma definitiva: rellena el campo "eliminacion" del registro con la
- * fecha de hoy. La web deja de mostrar los avisos que tienen ese campo.
+ * La web es pública y no pide contraseña, así que este Worker solo sabe hacer
+ * tres cosas concretas, y ninguna destruye nada:
  *
- * Si algún día se recupera un aviso, basta con vaciar esa casilla en Airtable.
+ *   ocultar   -> rellena "eliminacion" con la fecha de hoy; la web deja de
+ *                mostrar el aviso. Se recupera vaciando esa casilla en Airtable.
+ *   terminar  -> pone Estado = "Terminado".
+ *   reabrir   -> pone Estado = "Pendiente".
+ *
+ * Cualquier otra cosa se rechaza. Aunque alguien de fuera llame a este Worker,
+ * no puede escribir en ningún otro campo ni borrar un registro.
+ *
  * El token de Airtable con permiso de escritura vive aquí como secreto de
  * Cloudflare y nunca sale de este Worker.
  */
@@ -61,12 +67,25 @@ export default {
       return json({ ok: false, error: 'Petición mal formada' }, 400, cors);
     }
 
-    const { recordId } = cuerpo || {};
+    const { recordId, accion } = cuerpo || {};
     if (!/^rec[A-Za-z0-9]{14}$/.test(recordId || '')) {
       return json({ ok: false, error: 'Identificador de aviso no válido' }, 400, cors);
     }
 
+    // Lista blanca: esto es lo único que este Worker puede escribir.
     const hoy = new Date().toISOString().slice(0, 10);
+    const CAMBIOS = {
+      ocultar: { eliminacion: hoy },
+      terminar: { Estado: 'Terminado' },
+      reabrir: { Estado: 'Pendiente' },
+    };
+
+    // Sin "accion" se asume ocultar, para no romper nada que ya llame así.
+    const cambio = CAMBIOS[accion || 'ocultar'];
+    if (!cambio) {
+      return json({ ok: false, error: 'Acción no permitida' }, 400, cors);
+    }
+
     const url = `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${env.AIRTABLE_TABLE_ID}/${recordId}`;
 
     const r = await fetch(url, {
@@ -75,7 +94,7 @@ export default {
         Authorization: `Bearer ${env.AIRTABLE_TOKEN_RW}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ fields: { eliminacion: hoy } }),
+      body: JSON.stringify({ fields: cambio }),
     });
 
     if (!r.ok) {
@@ -86,6 +105,6 @@ export default {
       );
     }
 
-    return json({ ok: true, eliminado: recordId, fecha: hoy }, 200, cors);
+    return json({ ok: true, recordId, accion: accion || 'ocultar', cambio }, 200, cors);
   },
 };

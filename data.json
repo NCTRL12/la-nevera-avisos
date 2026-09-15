@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-15T09:37:20.936Z",
-  "total": 9,
+  "generado": "2026-09-15T18:24:10.218Z",
+  "total": 10,
   "avisos": [
+    {
+      "id": "recERk0enEGE2CskK",
+      "numero": 90,
+      "cliente": "",
+      "emplazamiento": "bodegas mezquita ribera",
+      "maquina": "",
+      "fecha": "2026-09-15T16:53:50.945Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "",
+      "identificado": "",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recXk0h8P9rjjOQ2w",
       "numero": 89,

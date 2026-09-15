@@ -1,7 +1,49 @@
 {
-  "generado": "2026-09-14T12:37:08.100Z",
-  "total": 6,
+  "generado": "2026-09-15T09:37:20.936Z",
+  "total": 9,
   "avisos": [
+    {
+      "id": "recXk0h8P9rjjOQ2w",
+      "numero": 89,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Céspedes",
+      "maquina": "Campana extractora",
+      "fecha": "2026-09-15T09:27:01.524Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Al igual que la campana de Cruz, que te ha comentado Rafa Romero, la de Céspedes también hace un ruido inusual",
+      "identificado": "Jose Ramón Chef Ejecutibo",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "rec7zSaOWQbgxoNhN",
+      "numero": 88,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Cruz del Rastro",
+      "maquina": "Campana extractor",
+      "fecha": "2026-09-15T05:30:16.565Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Hace mucho ruido",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "rec8p3Pfa0citjQRn",
+      "numero": 87,
+      "cliente": "Tercer tiempo",
+      "emplazamiento": "Calle María la judía",
+      "maquina": "Aire acondicionado",
+      "fecha": "2026-09-15T05:15:44.734Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Revisión de máquina",
+      "identificado": "Ramon",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recU8Ed5ParyhmkY2",
       "numero": 86,

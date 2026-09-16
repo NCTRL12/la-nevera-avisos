@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-16T12:11:08.457Z",
-  "total": 8,
+  "generado": "2026-09-16T19:50:38.931Z",
+  "total": 9,
   "avisos": [
+    {
+      "id": "rec4JhH86XQ7cZNZZ",
+      "numero": 92,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Ribera",
+      "maquina": "Lavavajillas",
+      "fecha": "2026-09-16T17:48:34.354Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Se ha vuelto a parar y ahora no arranca",
+      "identificado": "Jose Ramón",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "rec5PxxVGD1lJXuIL",
       "numero": 91,

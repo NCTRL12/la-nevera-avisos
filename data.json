@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-17T10:21:15.481Z",
+  "generado": "2026-09-18T09:13:20.904Z",
   "total": 10,
   "avisos": [
     {
@@ -79,7 +79,7 @@
       "emplazamiento": "Calle María la judía",
       "maquina": "Aire acondicionado",
       "fecha": "2026-09-15T05:15:44.734Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": false,
       "descripcion": "Revisión de máquina",
       "identificado": "Ramon",

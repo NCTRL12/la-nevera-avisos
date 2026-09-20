@@ -1,7 +1,58 @@
 {
-  "generado": "2026-09-18T09:13:20.904Z",
-  "total": 10,
+  "generado": "2026-09-20T15:59:46.227Z",
+  "total": 13,
   "avisos": [
+    {
+      "id": "recPcS7HPmtCezRud",
+      "numero": 96,
+      "cliente": "",
+      "emplazamiento": "Currito",
+      "maquina": "",
+      "fecha": "2026-09-20T14:50:23.326Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "",
+      "identificado": "",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "rec2bVWXyOybfYgcy",
+      "numero": 95,
+      "cliente": "Currito",
+      "emplazamiento": "La flaca",
+      "maquina": "Aparato digestivo",
+      "fecha": "2026-09-20T14:46:44.881Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Necesito un digestivo después de esta gran ingesta de alimentos",
+      "identificado": "Currupipimux",
+      "urlPublica": "",
+      "adjuntos": [
+        {
+          "nombre": "MVIMG_20260920_164600.jpg",
+          "url": "https://v5.airtableusercontent.com/v3/u/57/57/1789927200000/r-syb5FA16DosSC_QZmlhw/3eK-JBwcDksDUBAUdMi50zKk_8C3hILXt5ZDygJirFzLwAwJdO7IuBOa-CBVnbUbqpvILVGGJol8jQYRtrwhx2BaXQx1ejWcP0blkKwqcqjz_mscrq4ogq5TldYnyGwGaLJcVnVH4pVzsP23Ho1lFyex1kSOFG8SvCywkxDuMdk/8-TgTFjAQSTl04NpIK7htXp55kWqt_UtczmFsojInho",
+          "mime": "image/jpeg",
+          "clase": "imagen",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/57/57/1789927200000/ldhD4b7I28vn_Tn_II0VxA/CTU1D9zLnMlQGvydN2ZsYgsIXtugvP69qFdfG2NUMrv-Nzlf1S-EVcWpzdwjqzyKEOV6zqb2BOR8gGUnJVzVaRyDHDc2GmtEDeehdIogEV2kf5yKBwvm6McvEk7xhe2ycdlPH58hPaw6zQEA75XZGg/_x8SN0Dx-BZHx4j24ZMGZUXynzqOdB5txRU7EksHdFg",
+          "tamano": 8688487
+        }
+      ]
+    },
+    {
+      "id": "recTGNJpqEKlKn434",
+      "numero": 94,
+      "cliente": "",
+      "emplazamiento": "yo",
+      "maquina": "",
+      "fecha": "2026-09-20T14:34:12.110Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "",
+      "identificado": "",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recYjkmYQUUHd9tqo",
       "numero": 93,

@@ -43,6 +43,13 @@ campos concretos (`eliminacion`, y `Estado` a Terminado o a Pendiente).
 Cualquier otra petición la rechaza, así que aunque la web sea pública nadie
 puede tocar el resto de campos ni borrar un registro.
 
+Al marcar un aviso como terminado **desaparece la etiqueta roja de "Parada de
+producción"**, deja de contar en "Con parada" y se le quita el borde rojo: si
+está terminado, la avería está arreglada y la parada ya no existe. La casilla
+`Avería con paro` de Airtable **no se toca** — sigue diciendo que ese aviso
+paró la producción, y en la ficha del aviso se ve como "Sí · ya resuelta". Si
+se pulsa "Volver a pendiente", la etiqueta vuelve sola.
+
 ### Sobre el botón "Eliminar aviso"
 
 No pide contraseña, a propósito: el equipo lo usa desde el móvil y tener que

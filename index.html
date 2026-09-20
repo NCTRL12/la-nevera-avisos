@@ -474,6 +474,17 @@ function pesoLegible(b){
   return (b/1024/1024).toFixed(1) + ' MB';
 }
 
+/* La casilla "Avería con paro" de Airtable dice que ESA avería paró la
+   producción; no deja de ser cierto cuando se arregla. Lo que a la web le
+   importa es si la parada sigue ahí ahora mismo, y un aviso terminado ya
+   está arreglado. Por eso la etiqueta roja, el borde de la tarjeta, el
+   contador "Con parada" y el filtro miran esto y no `a.paro` a secas: al
+   marcar terminado la parada desaparece sola, y al volver a pendiente
+   vuelve, sin tocar nada en Airtable. */
+function paradaActiva(a){
+  return !!a.paro && a.estado !== 'Terminado';
+}
+
 /* ═══════════════ Mensajes del botón Actualizar ═══════════════ */
 let temporizadorAviso = null;
 function mostrarAviso(texto, tipo = 'neutro', duracion = 4200){
@@ -585,7 +596,7 @@ function filtrados(){
   const q = textoBusqueda.trim().toLowerCase();
   return avisos.filter(a => {
     if (filtroEstado !== 'todos' && a.estado !== filtroEstado) return false;
-    if (soloParo && !a.paro) return false;
+    if (soloParo && !paradaActiva(a)) return false;
     if (!q) return true;
     return [a.numero, a.cliente, a.emplazamiento, a.maquina, a.descripcion, a.identificado, a.estado]
       .join(' ').toLowerCase().includes(q);
@@ -595,7 +606,7 @@ function filtrados(){
 function pintar(){
   $('dato-total').textContent = avisos.length;
   $('dato-pendientes').textContent = avisos.filter(a => a.estado === 'Pendiente').length;
-  $('dato-paro').textContent = avisos.filter(a => a.paro).length;
+  $('dato-paro').textContent = avisos.filter(paradaActiva).length;
   $('c-todos').textContent = avisos.length;
   $('c-pendiente').textContent = avisos.filter(a => a.estado === 'Pendiente').length;
   $('c-terminado').textContent = avisos.filter(a => a.estado === 'Terminado').length;
@@ -620,11 +631,12 @@ function pintar(){
 
 function tarjeta(a){
   const abierto = abiertos.has(a.id);
+  const parada = paradaActiva(a);
   const lugar = a.emplazamiento || '—';
   const titulo = [a.cliente || 'Sin cliente', a.maquina].filter(Boolean).join(' · ');
 
   return `
-  <article class="aviso ${abierto ? 'abierto' : ''} ${a.paro ? 'con-paro' : ''}" data-id="${esc(a.id)}">
+  <article class="aviso ${abierto ? 'abierto' : ''} ${parada ? 'con-paro' : ''}" data-id="${esc(a.id)}">
     <button class="cabecera-aviso" data-accion="alternar" aria-expanded="${abierto}">
       <span class="numero mono">#${esc(a.numero ?? '—')}</span>
       <span class="datos-aviso">
@@ -635,7 +647,7 @@ function tarjeta(a){
         </span>
       </span>
       <span class="insignias">
-        ${a.paro ? '<span class="insignia paro">Parada<span> de producción</span></span>' : ''}
+        ${parada ? '<span class="insignia paro">Parada<span> de producción</span></span>' : ''}
         <span class="insignia ${a.estado === 'Terminado' ? 'terminado' : 'pendiente'}">${esc(a.estado)}</span>
       </span>
       <span class="flecha">
@@ -662,7 +674,7 @@ function detalle(a){
         <div class="campo"><dt>Máquina</dt><dd>${esc(a.maquina || '—')}</dd></div>
         <div class="campo"><dt>Fecha y hora</dt><dd class="mono">${esc(fechaLarga(a.fecha))}</dd></div>
         <div class="campo"><dt>Estado</dt><dd>${esc(a.estado)}</dd></div>
-        <div class="campo"><dt>Parada de producción</dt><dd>${a.paro ? 'Sí' : 'No'}</dd></div>
+        <div class="campo"><dt>Parada de producción</dt><dd>${a.paro ? (a.estado === 'Terminado' ? 'Sí · ya resuelta' : 'Sí') : 'No'}</dd></div>
         ${a.identificado ? `<div class="campo"><dt>Registrado por</dt><dd>${esc(a.identificado)}</dd></div>` : ''}
       </dl>
     </div>

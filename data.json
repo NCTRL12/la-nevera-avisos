@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-21T06:16:03.779Z",
-  "total": 13,
+  "generado": "2026-09-21T12:59:01.465Z",
+  "total": 14,
   "avisos": [
+    {
+      "id": "recNW2PdDbDz6uxdc",
+      "numero": 97,
+      "cliente": "Manuel Moreno",
+      "emplazamiento": "Córdoba",
+      "maquina": "Varios",
+      "fecha": "2026-09-21T08:48:59.505Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Revisión máquinas en general y limpieza de condensadores CRV",
+      "identificado": "Manolo Moreno",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recPcS7HPmtCezRud",
       "numero": 96,
@@ -31,10 +45,10 @@
       "adjuntos": [
         {
           "nombre": "MVIMG_20260920_164600.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/57/57/1789984800000/5M2YpMHkNJ4uMx7nBXB2SA/qpraCw_93ZkyyuBIxg2psZwnQnR44q0ob-gg-XPU5yYAUY7zzbGItGhNoeN6LI2kupB52IRFj18H0GoLhgz6yuSQykLEdbo5RshxsSZGGPXFUyTPPB-3NW41CV2zLjnlFUynbvrTAJ4iOqIMU7eWjsSUTYXgXsNjALEG4u_dOoM/PQUn94TIX5caYFA9g7yCrwhasbmvpNXEj9awbwA-PfA",
+          "url": "https://v5.airtableusercontent.com/v3/u/57/57/1790006400000/0wULWJFlNR9dAw3ZuGVSBw/IKYxP_YFhEri6Lt4KL2pIyx3FxcLexrx7imO_nYtdYvsHm9mIugGELcS7JDSExEN6FvH4guBKlGhPt_aMCcpHPIg31cjNTY2-tggZWqkxjHXXAgtWzlg5B_IlePWFrui4xfDVceVCaKEfax8uQegZrBSCjPpZT74XPhmqYnhfYE/ub4UdzeJWwgKe7aOguPZ-PjgjwXd49eaRgi_srCGVPk",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/57/57/1789984800000/EthKJABJM_nefUzbggKw4w/kpp5UZ2tW2DDOfofQ_l_Hii0jqC0_ln5UNKzIj1BgokrRo5JTqfeSdbVVyrfHYj4WzhumPHvFQkk5Obxkb4z5MiIap02A9FHI0QKjrt4tLpftzfJ1nK8Sz3CDJNVAzXtqmYf10a-hcVuVbg-huuK1Q/qJsVDeHOdptevL1STpLNNtq4YAEMkC3zt1P8Tik4rOM",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/57/57/1790006400000/AZ-bSPghVXkPOP4VWyXL0w/5LGuFQEepgWlezfemnoBCSh9eF-ReXyUcARdbTOSC1_oLOK4oQAJg-aSFhOuQpEiWuT39AQtlQIZmZ49NEpVN56GKNVV0vei21bwt92MtVzi7kSFu9UeTvmA7sVu8gDeOzZf2Iz3-6ZK-eZF9skWew/iGt7ULqStBGoX1GftL3f8xkTS0JllAylyRK9MdNzRiM",
           "tamano": 8688487
         }
       ]

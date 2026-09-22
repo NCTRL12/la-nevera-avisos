@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-22T10:15:43.987Z",
-  "total": 11,
+  "generado": "2026-09-22T15:00:27.368Z",
+  "total": 12,
   "avisos": [
+    {
+      "id": "recmdP43ArMIakefn",
+      "numero": 98,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Céspedes",
+      "maquina": "Piano cocina",
+      "fecha": "2026-09-22T14:14:50.924Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Está a 30 grados y no baja",
+      "identificado": "José Ramón",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recNW2PdDbDz6uxdc",
       "numero": 97,

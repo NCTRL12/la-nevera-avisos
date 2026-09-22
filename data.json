@@ -1,6 +1,6 @@
 {
-  "generado": "2026-09-22T05:30:33.787Z",
-  "total": 14,
+  "generado": "2026-09-22T10:15:43.987Z",
+  "total": 11,
   "avisos": [
     {
       "id": "recNW2PdDbDz6uxdc",
@@ -13,57 +13,6 @@
       "paro": false,
       "descripcion": "Revisión máquinas en general y limpieza de condensadores CRV",
       "identificado": "Manolo Moreno",
-      "urlPublica": "",
-      "adjuntos": []
-    },
-    {
-      "id": "recPcS7HPmtCezRud",
-      "numero": 96,
-      "cliente": "",
-      "emplazamiento": "Currito",
-      "maquina": "",
-      "fecha": "2026-09-20T14:50:23.326Z",
-      "estado": "Pendiente",
-      "paro": false,
-      "descripcion": "",
-      "identificado": "",
-      "urlPublica": "",
-      "adjuntos": []
-    },
-    {
-      "id": "rec2bVWXyOybfYgcy",
-      "numero": 95,
-      "cliente": "Currito",
-      "emplazamiento": "La flaca",
-      "maquina": "Aparato digestivo",
-      "fecha": "2026-09-20T14:46:44.881Z",
-      "estado": "Pendiente",
-      "paro": true,
-      "descripcion": "Necesito un digestivo después de esta gran ingesta de alimentos",
-      "identificado": "Currupipimux",
-      "urlPublica": "",
-      "adjuntos": [
-        {
-          "nombre": "MVIMG_20260920_164600.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/57/57/1790064000000/OIocqWpoZbjz3ouFCm3PyA/iH0oQQQo3mEVRA_JLDgdFSPe4OcghXDHAp-h9xioyQF9OC8YlabYhLf7WXHdnw8PelE3MPB-vrkUwCuTdBv2eVWxiLvwjBYGF6kqNETkRCu42huEiBs1uww4YisAGcH_K8SV4DLO1BvHUKXVT2ZKIQkTPr689qbJviP8G20xxEg/RhSCQddajIALN4rmoJ5Rc8BNJuEiBDxz0EgaI_5rsoc",
-          "mime": "image/jpeg",
-          "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/57/57/1790064000000/-Y5xedD3_GvyhP-GrPkzUw/rwTaR5Mx5r9nbhEb527W674iU90RXBDpN0xUEjlzYZdOwoPInEXVnyBMMAeLY_hZawarUMQpkrUumiJGi8S73leON7uzMUUyzBHDuDK1_au0sY77uufiJssJY5TBlDBK8g9y2DLiQJ0uQR3gh6Yclw/boLrrkUSNjheNY09qvEB8NSj28rEidWe5Zo5MNg_0BM",
-          "tamano": 8688487
-        }
-      ]
-    },
-    {
-      "id": "recTGNJpqEKlKn434",
-      "numero": 94,
-      "cliente": "",
-      "emplazamiento": "yo",
-      "maquina": "",
-      "fecha": "2026-09-20T14:34:12.110Z",
-      "estado": "Pendiente",
-      "paro": false,
-      "descripcion": "",
-      "identificado": "",
       "urlPublica": "",
       "adjuntos": []
     },

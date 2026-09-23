@@ -1,21 +1,7 @@
 {
-  "generado": "2026-09-23T12:26:22.436Z",
-  "total": 12,
+  "generado": "2026-09-23T20:33:07.768Z",
+  "total": 11,
   "avisos": [
-    {
-      "id": "recklE4w4dRoClPIp",
-      "numero": 99,
-      "cliente": "",
-      "emplazamiento": "bodegas mezquita corregidor",
-      "maquina": "",
-      "fecha": "2026-09-23T09:26:51.157Z",
-      "estado": "Pendiente",
-      "paro": false,
-      "descripcion": "",
-      "identificado": "",
-      "urlPublica": "",
-      "adjuntos": []
-    },
     {
       "id": "recmdP43ArMIakefn",
       "numero": 98,

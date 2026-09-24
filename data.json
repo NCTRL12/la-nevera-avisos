@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-23T20:33:07.768Z",
-  "total": 11,
+  "generado": "2026-09-24T11:56:02.247Z",
+  "total": 12,
   "avisos": [
+    {
+      "id": "recGyDoYaiMbeLWpG",
+      "numero": 100,
+      "cliente": "Bodegas Mezquita  Cruz del Rastro",
+      "emplazamiento": "Cruz del Rastro",
+      "maquina": "Nevera de barra",
+      "fecha": "2026-09-24T07:44:37.006Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "La nevera de los refrescos no enfría",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recmdP43ArMIakefn",
       "numero": 98,

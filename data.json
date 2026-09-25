@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-24T11:56:02.247Z",
-  "total": 12,
+  "generado": "2026-09-25T06:32:42.153Z",
+  "total": 13,
   "avisos": [
+    {
+      "id": "recSs50bGSAq0EUfE",
+      "numero": 101,
+      "cliente": "Bodegas Mezquita Cespedes",
+      "emplazamiento": "Cespedes",
+      "maquina": "Puerta cámara grande",
+      "fecha": "2026-09-25T05:45:08.545Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Está rota, no me han dado explicación",
+      "identificado": "Rafa romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recGyDoYaiMbeLWpG",
       "numero": 100,

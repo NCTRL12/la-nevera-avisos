@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-25T06:32:42.153Z",
-  "total": 13,
+  "generado": "2026-09-27T13:16:31.378Z",
+  "total": 14,
   "avisos": [
+    {
+      "id": "rectKHsMUkAEuXCR3",
+      "numero": 102,
+      "cliente": "Bodegas mezquita",
+      "emplazamiento": "Céspedes y Cruz",
+      "maquina": "Campana",
+      "fecha": "2026-09-27T11:46:58.913Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Ruido super fuerte, no se puede dar el servicio bien",
+      "identificado": "José Ramón",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recSs50bGSAq0EUfE",
       "numero": 101,

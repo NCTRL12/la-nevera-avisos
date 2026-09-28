@@ -1,7 +1,21 @@
 {
-  "generado": "2026-09-27T13:16:31.378Z",
-  "total": 14,
+  "generado": "2026-09-28T07:44:16.038Z",
+  "total": 15,
   "avisos": [
+    {
+      "id": "recxWVDDItn9lirBg",
+      "numero": 103,
+      "cliente": "Bodegas Mezquita Corregidor",
+      "emplazamiento": "Corregidor Luis de la Cerda",
+      "maquina": "Fabricador de Hielo",
+      "fecha": "2026-09-28T06:17:12.045Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "El fabricador de hielo de la barra de Corregidor no funciona",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "rectKHsMUkAEuXCR3",
       "numero": 102,

@@ -1,7 +1,53 @@
 {
-  "generado": "2026-09-28T16:01:30.009Z",
-  "total": 16,
+  "generado": "2026-10-03T01:10:32.380Z",
+  "total": 18,
   "avisos": [
+    {
+      "id": "recompYnFz7T0TgdM",
+      "numero": 107,
+      "cliente": "Bodegas mezquita",
+      "emplazamiento": "Céspedes",
+      "maquina": "Piano pase",
+      "fecha": "2026-10-02T22:27:31.698Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Se ha mojado y cuando se enchufa salta todo el cuadro URGENTE",
+      "identificado": "José Ramón",
+      "urlPublica": "",
+      "adjuntos": [
+        {
+          "nombre": "IMG-20260930-WA0084.jpg",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791000000000/PdfkG0Hblcx13g_OZdmKwA/GOI5zUTTxemVTu1MXmn43HRs3xnGPDa7WlBP8CSRP6QUxT4OO-Btw6vGO-rV54DjHZxHk6j7t9Dg1yyx56q-mCqo7ss2KZu5HzIwHcgbOafH6QkJyCDyZ8OOFYnUAWVcfoVeBJF6HJFB1SjWHtRoZ4LRLVoLsR4c6A1JtXhHwj8/G-xp_y_M5cwqa7c24wCSOHwx3AJUQBlf0fBJdyXMcSE",
+          "mime": "image/jpeg",
+          "clase": "imagen",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791000000000/6xaP7IIiZ-UmLuDKeQ1Ktg/oOhaZV9RLOwZn2wBPhztD4QMAQulkAK-qp2J3E-eimxDlWZXF-r8q7gojRAbaJXbKdGi-RYLEuPzPrCy40KK8c3FDogmaql6tL2nL4DmZ4FnRr85itabke0uiTaMNnSzW88taWx_HLkgYOouxGtm0w/BFJq_p_NI6FJ9wzrdMARf0cVIKEnMQipPO-RWPhPw3E",
+          "tamano": 209495
+        }
+      ]
+    },
+    {
+      "id": "recCXPE5kd5C8ROqe",
+      "numero": 106,
+      "cliente": "Bodegas mezquita",
+      "emplazamiento": "Ribera",
+      "maquina": "Congelador pie Cuarto frío",
+      "fecha": "2026-10-02T22:26:15.357Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Temperatura de congelador muy elevada",
+      "identificado": "José Ramón",
+      "urlPublica": "",
+      "adjuntos": [
+        {
+          "nombre": "IMG-20261003-WA0001.jpg",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791000000000/5nsMkvdYLNuzvdJ8l-bIzg/sieZ5ZGTyGivmADI3_FwdOaHBehn0w9SCEk1Do6VDSmHTE7O2JUmemvH3Lboc8OqsPmo8sznOKWrsfqflhVeDBdu1iKKmMNIMO48Fc9NTtQopreFAoQWEBQX3OdbQ3Y6Ys4-vL06I29m-Zc0p5NtvXSVM7uyvmG8KM4Ik-4yAnk/8Utvc-v7d4d9_KIbPdr7f0bHyEMR1g4GbFMe7jsqSYU",
+          "mime": "image/jpeg",
+          "clase": "imagen",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791000000000/3r314dQDQGT8R5iR9whKVA/ynjsxdySwhqNoABiMS6un4pqqw_fDJXFX636qYCp4cP2l4BU1z49t8_Ychd7aYRTTFwf82F6BsvA7ZJJESlrlu4oQ9TFLeF7xUSlJLuwazLbpiSRnDP0Qm1AlZGqYYvAYpD93AnFTbTwvfDfnZeq5w/H8UpF3Tab2Dc97IGGvmnzZ4H3cPZBZ19cnFh3X0i1cw",
+          "tamano": 182176
+        }
+      ]
+    },
     {
       "id": "recCguclhZdReMirA",
       "numero": 105,

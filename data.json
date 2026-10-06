@@ -1,7 +1,21 @@
 {
-  "generado": "2026-10-06T02:32:52.672Z",
-  "total": 18,
+  "generado": "2026-10-06T09:21:57.694Z",
+  "total": 19,
   "avisos": [
+    {
+      "id": "recmiQ6hfl3E2Fmc7",
+      "numero": 108,
+      "cliente": "Bodegas Mezquita Ribera",
+      "emplazamiento": "Ronda de Isasa",
+      "maquina": "Congelador de la cocina",
+      "fecha": "2026-10-06T06:25:45.693Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "El congelador está a cinco grados",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recompYnFz7T0TgdM",
       "numero": 107,
@@ -17,10 +31,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791266400000/Xyhli58fRsoxnDW3k8Ysdg/MGhrgByARBybPGFVQ0-mwZMlesS3DTKhsUocyV8CBMmNsm2in2JnSJHAdS27xcRgqNrSz4GoadTarqoRGE09RZ7iUSM8UPJH4brf9A7SlkfK8roCL5Sun9hie67siHG62OhcHFGM65hl3-Dbqadd-gSy8zmq7lUJX_CPlSXV6Oc/p_60cx8CoZ17qNzY8ieMi2uYIzBjX2LuwmX6_pE0e5E",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791288000000/AMW7DU_eu1HeBGwUU-f4TA/g5s1ZjkH8C7mnLGKeGWcinCUqSUhIr0Pd-No9Jma6hFRTP3aLf1D4C-PhSJbVgNj3xh9l0JkHMjrAXyXPxMXZdWdARD-CqkNfPzFJoJq29OM9iwa9fxwjhRi-bJC_raig4VtqtUp9h3fQCjXQenRp3s3ZCoJqDC8D-KL_1dIXvI/TWlw78k-1ph5tzw3QSFyrbqqFOWUBKXVuNHEwBX6ZFw",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791266400000/aAABx3_u9a3rqXyvkI8psw/z4oU-9u4FrzFYXOSMcWoYZE0vdme4EPjrTa_4KUytYJJhRHzuEHqEX4lZ0YiqgkUTqYSHFS4uZ9oV1AWr9P-sizvByVCSlyzkggAWpQDk0-ATeI2LmplnuA2t30_rE85Xfc2XVn3GZTDsidqRoURpw/mS0bwiaDZ3Ow95U4kxapWJhTi6csGf6zw6tNRXHxP48",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791288000000/LQgixF_d4Smvyv4PbHfkqQ/tp7ZH8ljeCK5AWh3EntQyIjamvRJg-Wbk5tUuMFzSVtUV_uS13lDMxaKooArbc9yRz_ErNzNHoTs4Maz4BVaHTQPgUUXxBZJG1aJqipvbQ31viKm9VE0KAL4mA20Hd-wgYSyEgkdLbft_9VL--PBsQ/sv5Q2y_lmbjLAIaJ_OnpMJY5ixvthgInju2VvpYo6tY",
           "tamano": 209495
         }
       ]
@@ -40,10 +54,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791266400000/HyYKWQ8S1uf34_iRoeQFrA/OV70vQpADgdCVVAURaWMk8Ys9LAesyvOTVYeXUOzTtly4g80IQuQm7M4uQzDCL_54eO_fWHilb_PMFFS3CdNiCxxYFpCzhK8FThq_THXar-B_zd1GPzsvtEfZI18EOZMspi8cbss9IDaUlL94MeO4qU8_lyPGQPSOHIBH-W6OJo/CXt8m95ZL9ZgA3RXI0r7XUHPCB34Ye-JscXVFU2NhEc",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791288000000/yK3R4WokOjHdAb6DBE6OUw/RRbjt5JBPjNC0lp62WcEf-fTgjnPjIRtuO_AuO8fj-OXGPPY_iqk4XPY05K1F611eOw-W9QpLVKeVuT0vsS5gANs-Tq4-NXe8qsbvU7-msmql1WvWp2DlXoLhCFxfsRvpd6BEsCJvO-SHpDf5WM7sWgCBhKmArJeA4H6x1386gU/6_c-fc8wVnBbMQyU90lMOYWpMsuoR7SnOMmDS8g4va4",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791266400000/QC6ubzNTb6nGmUb0sfqIFw/pVRHpTyXn0cR-V2cxq6rhL6sDTlVyiDt_kYNqdW-5S8TIKbfz73fJwHMpXh8Psejbf69F14F8QwpksNzqiBDjnvO5d3WpzSVWAggW3SGvOYKF1z6Dwxb1fh8x_R3n_Sn_kY4pYqJhdapuE98x44O1w/KqjpZvFN6eiEXg9KUzgrhZ3DhVJVanyU5FS5tWlNkzo",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791288000000/rh-zq6-pUKc0Ne7bp9cJmQ/l25UE4hNhbQRmIl9UYIAHuGdrwJLaVKFGAcot7YDR2dZjlbhDwrnbhdlkzN4vYTfp1gzGoy-7T3MDqsMZCx3hqq7RfSEPEDicmykUlcArjEol4GgarykQIg8-UEFyWOdVSTYRxOqxZ4Kj6ogxjnnzQ/PtNBegqNyBeRqeJsAjIDN1eYFSYVng-SsacVdnwt-8w",
           "tamano": 182176
         }
       ]

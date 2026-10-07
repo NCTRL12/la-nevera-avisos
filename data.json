@@ -1,7 +1,21 @@
 {
-  "generado": "2026-10-07T06:13:12.443Z",
-  "total": 19,
+  "generado": "2026-10-07T13:28:59.220Z",
+  "total": 20,
   "avisos": [
+    {
+      "id": "recMrRqAdePjeGDm8",
+      "numero": 109,
+      "cliente": "Bodegas Mezquita Ribera",
+      "emplazamiento": "Ronda de Isasa",
+      "maquina": "Frigorífico tres puertas",
+      "fecha": "2026-10-07T10:25:21.049Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "La cámara debajo del pase de Ribera está a quince grados",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recmiQ6hfl3E2Fmc7",
       "numero": 108,
@@ -9,7 +23,7 @@
       "emplazamiento": "Ronda de Isasa",
       "maquina": "Congelador de la cocina",
       "fecha": "2026-10-06T06:25:45.693Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": true,
       "descripcion": "El congelador está a cinco grados",
       "identificado": "Rafa Romero",
@@ -31,10 +45,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791367200000/55sq2JujHMMAqo5exkDFtA/N-MH6R_IE8w-nB2m-agsz7s0GZ0PcYX3I7zcEOf1utF6ZKRRnOqhBWPSAoLyTFNczrTsHrmCW3nqcghksLU725DP-3db-1sLPhi-AvOEH9rAPYQDd5AYCOGmV_k-szcIMwuH_cZkWHDIvwj8Osf0CiC0i63g6kcBCtWEss5CyqE/3oAD7gV-ijRHhk0BIuFIRY0fDf8d1YKVSNrdzNAsJ4Q",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791388800000/e0px8ZQHEG1yzm2jPhINgQ/9-TQEKy7VqvzyqorfBcLOFnZAYsABpBFf80D0AqAQOjuiTDh1xORHHL3Bd5fQ3tHW5mdafyWatQ915k_-lD5JoLqhjRNOc-_6S5F1Dr1xZyFPKd2Jw9qTmaE_H-NqqfwwAf_SZHS6xres2gAbzmFUiMz9Z7BSy46RSMbdCHQcIs/poCi95ytcMqCx6qqb3B-DRg2W4w--rdB5eJreu8GbGE",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791367200000/G1DMoSsTg9OQtTZoLLrpEA/af5z6bGEO4pB2aiPkUZT8nOxIYC4Y90Kii1apJDd2KsFwJ3eES19vPmv8Bkqz8XckIU6aC0jvOS0_Sbq_FucGRm8IuyjSrcTdt8-znq1CF6i_VsNpQPogNayYEF74wax1zCw4kDlqj-s--388k4KAQ/vWqpw-zdx1h3zVRrPF6BKRzsfEnPYrN5_XqZWezgGMo",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791388800000/-AtkS0tnhK_wbVNUS246OQ/2-mTpeLTF7B4CmC_Tpy4dECCame4UMHx3dB1FhTtA_QCppYggt_EZYq55VJ4bBiWs9j8Vw0PEVHt76KxcHl0t4AONkguOmbPZgrFkMGZsQkv9Lfpntz98a2lN8y1IiS1CWSZovsqguQ8Hpb7dYcLQQ/KrdkRG8oZHY1cy8OwNwSrPcUocy3PAFL2C0X1ZpRLoU",
           "tamano": 209495
         }
       ]
@@ -46,7 +60,7 @@
       "emplazamiento": "Ribera",
       "maquina": "Congelador pie Cuarto frío",
       "fecha": "2026-10-02T22:26:15.357Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": true,
       "descripcion": "Temperatura de congelador muy elevada",
       "identificado": "José Ramón",
@@ -54,10 +68,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791367200000/E2Wd3EFnccSlKqYdNaVFsg/Bs-xXMXjfjV5gDO8-hy0byKWVQzamnlErhibGC3brHu_E8OcI0KF62LAbGlGb9xptOhl-CDF6dDx3NsF--R17_MhmH-5ZOgXg2FAq8ocW7cAgsfkBBvNOEazw5hdlcPB_y2-PxfDxidENvbvc5v3kQxrWDtISiBEWfE8a49sW1A/H0kpwoGQy038YBSfi7pryXdbr-glyIFkwEjyKSdIivM",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791388800000/wpegbM6ZgGb2wfnwj0IWXA/2UdK5yDIINQIqWhb8zGFN6L0CF2JTv2ezEnELKR4hMty--2pDnksEpdEOZ6X3Y54VToQCD5euot1tPEkoBbPDRCVWu0JMx5zyDMarJEPtP57172-JFOO13VGN6-yL-l3y_FxzadD1C5zG1PixZy-hhyXQljcFzSwM3NswMVfw0M/mQs4d8qy5mdTYv4nuYGeysTPj-B-exqTUNKNyWH4z1Y",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791367200000/hQE8_RQIfBwMvbAxT44Ysg/KV2Jws8PT9MbzCs5jf-wchHP0863auPp6GCzThzF4E1crsp-apGVfmYqgpfWNnT8JYKcLTbPbQAxO6mB5ZW8EO_2KWPgghz63uUnTL40M-6IM_-X5Tl3cep4vcnRQjwLY1pbgWox1QORHqjFwnELzQ/OdzxFk1DDLW6Qg340uvtaPd937Ym37f-YDqvuU-62oM",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791388800000/hCFehWF-Z6GkaaW8RQtAEA/WPmbU1mCGCZe-PltTr8LPNuqfy4H_-lwVkO1xQ50WoHQm48UVLLMmPHH3LnWtB51FGhzEiu1ewFb6U31f8syUAnT6RamobqI6IyPYiNFwo6h3vq1tAbmt1t2BDVQj5D9SpV08JGudsqr7XSfixt4WQ/pvEPSD2QmwsQK1sq6a5EZDHi8NEgfpm90aau5bE2Nb4",
           "tamano": 182176
         }
       ]
@@ -69,7 +83,7 @@
       "emplazamiento": "Ronda de Isasa 10",
       "maquina": "Campana",
       "fecha": "2026-09-28T13:29:40.181Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": true,
       "descripcion": "La campana salta del térmico a cada rato, y está haciendo la máquina de arriba un pitido muy ruidoso que no es normal",
       "identificado": "Angela",

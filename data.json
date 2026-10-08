@@ -1,7 +1,21 @@
 {
-  "generado": "2026-10-08T10:20:46.532Z",
-  "total": 20,
+  "generado": "2026-10-08T17:27:10.849Z",
+  "total": 21,
   "avisos": [
+    {
+      "id": "recgsOTy2MWLLAYS4",
+      "numero": 110,
+      "cliente": "Bodegas mezquita",
+      "emplazamiento": "Céspedes",
+      "maquina": "Cámara Grande",
+      "fecha": "2026-10-08T11:29:40.885Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Estamos sin luz desde que la quitamos por el problema de que saltaba",
+      "identificado": "José Ramón",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recMrRqAdePjeGDm8",
       "numero": 109,
@@ -45,10 +59,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791468000000/klIbcOZtJvkNl-jPMo6oGQ/nyWsaoNKim5M7jz83IkMVYBTtPZ-XzvbT2neXEldsBy3FdY198Z5LIp2qfcCxilyRiQpZq5WLdrLJWo2CaXlFvfwo1ByJTQlK0kBBeitTQlpRRFfaNznwKaDJrcwsEFlT716nXQcIAI6cc1qGeaiW8NvNFHmuuKAGaa1uMxYbJg/1IM9AoX4muckN7Ms8KU10YZ16Y9opSSktWTOl5b0Tis",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791489600000/sZyunmVDBE1Crl4GI7ktpw/iK-mvY7-v9JO2ss1HSFgRyqWVnwAatMc2dFOLdEQ2DZ-19nlOWd2v7Z_DR8xFRUQEJNccqYZsH5_1Mr0bb9MoQ97QhLhzO_Y42oI1SYTfprC8VVSJzDRLO06PtZVUMcqTASoIDfFg7KgS0TsV_mffw_0egpjhidersM8QBGWAak/bbPCJkzYDdMGMXQV_w1wIkK74XmfyDbux7HgPQoJsDE",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791468000000/hCGIVHUmgrKAJxyzBf8e8g/5G4ZiFmUnjU0Jw_4uAS4wYwa-nn4kwQtKKX9Ai72Qq8dZNH7XdhiuQr1vhFHFKal8AbZw5wZTGN0N_CwyDhMEccadrjfrh3IuWNDf6-6t-hBqNociFDi4Lm9iXdaiD6hSme012wh7lvdN0yeS0O3LA/1jCCHxsHP62v3pk5SpoRRgpjepoGPMzZ0jcvGJcvJ1I",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791489600000/0c3EYrS95AssJWWZjA1-dQ/HRd_nrT4esYmGFt9TRPEBjiulyz1EZWxO0PTEbhaKNPrIeC_bZpcOzr3Ee2Lk_Ybxoi9hJ8E303LO6RF1L1-okVnif4Tf9ODhgz-hAhybYiwKQQf6oSKgk8bh0BGyHu1-qWqTlZzRKBnxNz8VsOuww/qXoJ_tCFWh6iu_sKxhRxls7civlzCxHDzxLu6NyJp3w",
           "tamano": 209495
         }
       ]
@@ -68,10 +82,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791468000000/-JjQaRYmrwTdA1Y5V2eyPQ/sll9k0fhOne4s5z0n_exxzCLLElPJ1_Q5CmArDzYtq8Lau2BAMqZb4EKXi3xvRvCrdl4EfZWAlv-9y9YcGjUU2lQTKoiF0Id4vJodrOz49yTLwZg2XmKEcv4gedKp7eXGVIkKN1tULkbu45rJyEDYTihvNVqkV_tI-QOTxjo9hM/fpS-VfHAdfn8muazqwa7wDy8xB-y2iALiS8Fpqgi3WE",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1791489600000/CVEnGvJjlBP2RoUSGee1aQ/VYqTceUZmQ-b9Nb6KbSPOgyeCzN9YsVaGFOlpCP-1jnhjpQdqrOtp173tBvIx58N67W8RBpRYQPcsCd2TfDAX0c14fGQEu_eoGWh55GobNOlJqZBEHaK3SNvkDqD_rdII8dt17WcdBTEatBdmeMupXLku9G5c2eJfO4kmPrsKvQ/RcmjODCrsbp3PPmctdCtDWw3bOW1wv-TiX4RhW551U0",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791468000000/zFa_BbVfDALxwUzN0gm0Ag/D8698oR-H7hk1Bi0_1-V0WwWZomAspYcb8wY7tfpfDt7rQhABFVnWWfpq4QzggeZwp0KxTyeMtFO58wyhwG8f3omAlHy-1aFKYqkIgLwlfzBGuw-uuLIzGQEtcFG93xTEK6QDlmXHAl_2dd03BrpMg/zbjjKzhKNEpZOgc_UFqEjsWerRvu6N89LPqCD2OfKA0",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1791489600000/yOCPWFkDnDLH-KOohZGHdw/ArIzoj1nfPoPoLlNfP2rnBNB3xzqONtnl43qiOu8fvuO53SN7oEj6dBmxOvqourdGbkUBD9lUMtstuMMSQVFoQmuLTvCCzlZPeCrqL3IJcplY_ZJ0nfdytGp1IjaylAzzBnhyYBTXPwTRZsWp6D7BA/JpGgBz3TgqwrEz1IQA_Gi_7JtmMijoEcFmyyAj7jBnk",
           "tamano": 182176
         }
       ]

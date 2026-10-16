@@ -1,7 +1,21 @@
 {
-  "generado": "2026-10-16T02:32:08.917Z",
-  "total": 24,
+  "generado": "2026-10-16T07:29:00.589Z",
+  "total": 25,
   "avisos": [
+    {
+      "id": "recksx5y2uIZVk23z",
+      "numero": 114,
+      "cliente": "Bodegas Mwzquita",
+      "emplazamiento": "Cruz del Rastro",
+      "maquina": "Botellero barra",
+      "fecha": "2026-10-16T05:19:05.355Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Enfría demasiado",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "reck9kGd82SYcV9qk",
       "numero": 113,
@@ -101,10 +115,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792130400000/G8uPndY5rBaAChqec4Fgxg/SQdsHA97woIOX0Cai8smaApetyL-CzPjBCSa4zazPHxAXDLvMbtDqX2scVSi3Yn0GpGnvGGquKoIPAqEmT_JUgeGubJ84bBi3ywwKMzUS2BQrfC2jPTdTHx0KvAcLNqoxlc8hBWHepqyYSXjs4NMMrZ9jAhisj_2UJoU9cj1fdY/T0NRjPboPviO0wnXdaIaCVnKcD_gfOQiOKOlDRraRks",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792144800000/cxQaC08xihT-yHTtwcJDCg/81Q1_EoeIXfyl4TdXubUM3QXR1azq6YrpuR1S-hsyCFG2biAbhtMXLSxkuvfHNPMvXNkRk7E3pnnw3r7eVFONZZm-xciNQcjA96ITsH1WPatCfLn5LtGYl8Ef6SdPLIe-TI4WZQwhel5GTsGUcICxLWRINfxfPk0g3LtivkZwZc/5yWKVZMZlSwJyJZdvvuK3AQQHLsIavkY2tOdxEdflQU",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792130400000/DLWauhqae2qKFo-8QFw1IQ/oS83YRkc4Aa_3owva3QiKTBsQ0nrsVZGME7VjqlhO5Yh_7EgYE3Ef_DYdJEeDVDvwLSmuHNZkm_hhrsPTYS-vVegVZP3nfmbXSo40Jk-uWCFAwK3PyQRRFZmLkDU3RUHNIaQXaBYgw_2mg34LWEjmw/phGZiRgvoXGHAFxm99YrLPyjMDSuuhvoY5c8xcQlxdY",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792144800000/Qbgd3qdh-pGvZlSqgVNwbg/e5VzmYBIVCRgwn8S_d2yFRYZztdY02z1q5Us4qa7R0hBYi-NKMyPbrkpM3rrQvrIFlSdzqpkLLbAgmgcrS7_kHO1cIPM6sE2rGcQICvGHZGIAalDkcX0DMiT6VjTHpqAYqVNBPSy9dBOGPF4pIlwjQ/f5skj0fyb6_DIvSM_F-C3BsATJrQh_8xQTC-TCjab7M",
           "tamano": 209495
         }
       ]
@@ -124,10 +138,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792130400000/-JIYE7NBcOmu2gk5QnUgAg/I8VlQx7nQFlFXJLJbNDlbBUgvN_nm0YHrAESA30TGEb8FJ6z29z4OtYqrcNopVd9qTaA4hKPFbmP8PmadLtk5r2CNBi0I9afo4_Ufi142wFTEdNt4YgzGiNnC7uQcxQAiVLgTazlo2ecAuD421UjdctKHZNYd8i1k01o83MHGO4/Um8V8sR30SnqBQ8_m8miK3sFW9u9OV5a3oVV9OOBnf4",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792144800000/zboMEYZwqSkTd4bXlvLkdQ/a_5DS9g9EyarLl4p5Ypc2xoPmdr-K6pNk7fbvqkqPIoVuLTDQy-EKFFhtv5dJ1GCMTz-biPnCqL14-T4oNNV9PbKUWBk_-HvBO4DJAke3ZKM5ruc8P4FzZxvJPRLXJQj2IwJui6VMLzRhhhR8CD5PxDm3Fd0y8F2kaJyXLBeRIY/hRLvITj49zUzNXkBG0KDWGrC7JqKyDpW6kayRlAMkW4",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792130400000/hdOGTsfXtdUiuF-8YDJ3HQ/ekvBm8pGIZbCLC8Goc4Tu6eQeHlPEJLs5goNIHT_e4xMJgv5XFuPhNelkPJ6wxl2h5B8sViGiugYOioRHQM9PeE5DCTI8d2NwHHQBUuKy_9TRfena9kEiPl80GU8BEkM3bzfNgHiu0AO5oAEqBv6uw/sOcrT--lOugRpD6QihN4KDffZPyllsmrEyXQsGQrg6M",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792144800000/7gLwmus8IziHuKizCzWTlQ/nidyNIqoz66BW0qD-KwI08p1epkGoegfg2W5BO0NyHrLxR5loD91ENfFJYw2JOcEiBDCw6PndMOy10eif0mSq8iWNZ5ypGqMH26HLqzntaOJeLhHhX2nsLY3433MPXP0fOAedv8EsrxViRNTQau4Uw/nhTMg6FE4InnYgwsDXrzOmV92-kW6PiVT3T7pFOs4yw",
           "tamano": 182176
         }
       ]

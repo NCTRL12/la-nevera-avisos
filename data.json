@@ -1,7 +1,30 @@
 {
-  "generado": "2026-10-19T23:02:47.308Z",
-  "total": 25,
+  "generado": "2026-10-20T06:39:35.609Z",
+  "total": 26,
   "avisos": [
+    {
+      "id": "recetNUnUg7vBzpYw",
+      "numero": 115,
+      "cliente": "Bodegas Mezquita",
+      "emplazamiento": "Corregidor",
+      "maquina": "Cámara delante del horno",
+      "fecha": "2026-10-20T06:33:02.813Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Se ha descolgado la puerta y no sube de 15 grados",
+      "identificado": "José Ramón Cuadra",
+      "urlPublica": "",
+      "adjuntos": [
+        {
+          "nombre": "IMG-20261020-WA0001.jpg",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/rm51V7kkkQl8UPrJZT_WrQ/pNrwvn8FZ8LQmVWTxnlHct_cKx3H8Rydwu71FnfLz-_scy7rog7M4tOPtcJnJ7RWzP0q4JH5pi0fkotJdeKITbmYjqbso52thfgG20_xBILOi2zo60iNyLjD3gBT79OMpioHiXbc8buLouuUw5331GBxeED76F-F0TujMZgtgso/cImWKgx8ZsVdLzABugd0XU0Ys1aVEcj5whkU5vlBEW4",
+          "mime": "image/jpeg",
+          "clase": "imagen",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/yX-9cy6YDKpBzvyEM1Vm8g/Rlv47F0E4fpJo4tFkKGBtuPjw3KFeBoGDyJ3i7q0s4cOmjRPogbGvgyJN56KQQgvgFGSzbA6-a-YsMfmDLRrVCRCRfmJdy4-KpS_7uIIQK373T50tR2NRhJlW6JaV16uPG5_Rlp10JwfCgHvL__VOw/XFC4Sp2OUcv6-EAVh9Ezn1t7LjhynJZU2_XsvcSvmPo",
+          "tamano": 154495
+        }
+      ]
+    },
     {
       "id": "recksx5y2uIZVk23z",
       "numero": 114,
@@ -115,10 +138,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792461600000/0mg2xInTwMV0QF6HAUJP-w/sI4kE8TD9H3a8SVSnlpKz3afwxkIY0g-1uiNMQkNr7DpO9PDAn52NSB9enWl8ZaqERhz-zjsoiYL4mP5_Qel_9GztFYCUYjhzpPFuRZO-IBbAlqTdrm5aMomwD6hZ7cuvak0YpmdsKIlWoGyJzjHVptxucpmWW71Piyee49inBU/Ht2ddCptxCt9GFIxdGkisFgw-MlkFWtcZfZv774XV3Y",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/3QjjYC8rswMRctwjkCIFBQ/KfSV0QYjXyZ8Wd0y9iqlAEZpBSWG41BHDqghBZ4tX3fJSglkye0h5LM4sejQEzE5x7D9TTlqom3V4sgcMGfAgbbr9vtSnRQ6nXWmoMfzTqecGTN0mTyKS-l1wNA8SCnEDFa1Gp8CiXE64M9niwBWa5X_xgqgf9Hqj6AFBfcyogI/THs639P1Pg0e_gud70ywcc56zen4ZcDVg5AZX3VV4P4",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792461600000/7-V22lT9kzdVK1xkRtnWtw/ZJFJT4Pu7bHVAncxtovGkle7WZ4KuorLA4xroQ1BMBKQtiZt5KO15x681TMdDM0RO1Ht7Ip72yCrS4uqnQoozvFWQN3MNoRRxqDsJo5_xVNmRCPgyGyolWSax0XfgHMqBaRPiYa7BUFlzIzZvpizYA/PxSREWik22w0QcUUtMUrz_C8yiNu2brqBE8dKl-wk-Q",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/rVYcyUe6NP82EOUFRIwqaw/auH7eeZsqfHTr4FBy2PqOIOuDLPlbG3Hoe4ZoWFFO6Ilh617QM2brk-0vhskYKbjE5HfGs_qv7h6koN8n4pbuPeF6NJLCGTlnACypUEqD8NP5dRQETziPrgapm6SerEfZW0sUHFTUGdeCeN905Bmhw/0cPt0ke5MOumzpB1iaXHXIN4N0a_oNmz80xbkcfdk9Y",
           "tamano": 209495
         }
       ]
@@ -138,10 +161,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792461600000/mb5UC2W-McVGs_MeRf3NKA/I5Ut1aKAt3LSPM3DsAMpeCZT85nb6NSVhh1Yg5CynC8xfbP4prDJc8TMY4RRZVVDRDeSopjoYELoMU1qZSfzUaHmmCakEdN6WMP2y5ZYvhJdoISJTPqS4I5W2AJPE5nG_0zpsJN_AxUP1g811iQLC_p4GnJwRP0J8pT3j-jT6no/9ulwKCF-TKwW2rB2Do_fhoGE4a6FhReAckiy2PqmtxU",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/XphUCGk9x8CKr7_sSRlW3Q/T6O9vEpDK70pPTt6TOF0G7NtYzhoBSutItiJdQeKjxo6Z-BzPephZzWlr0f41NF2CfhHjbQPh_FgqTczgaPrAzBfCI07F4E1ZbaoB67LCgQubWcHYFB2MQBqImLg9cqsLdf364XZSm7k67jnSIgTfyimp_A3oLg0LtQfP9q1L5U/VFXCqcB6WqsmpduKrJi8_Se67ZcF4wE8JCntqC8m2oE",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792461600000/8lDsgfOy7r1HsCjypXNDWA/SJ8-G8FSem3kyQkmzKrwHtstQNCaM51egRakNe4RfSLXrL-jb8IMKVPoJfovV9UURkVErOQMxF4oF460C2xmBfiDJIjOM4H_SzqiA5SJ57Vzoc_aDB6-io-MUDzOObrOVdU4pGTNu4cekoeaezXxOA/evh24oU8QZcx3lAyZLX0GM592TRtEvPdPG5gG21z-Co",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792490400000/q0Xz8g5Q8unyWhcbSYpKIQ/PGMBkVRx6W1OGOaF4TXNJ8G0_6x36S6uJiWYo8xUf03qV0rAYF1ukseIq6Wkaw9FCit4GQPCcbVnLGWY9RuQiRRcRdHL1KKQqEY4JKeC5HnLDBqM8QeLn5S9a02WHXXDl7VTrmAcJLYxWeYarTc1VQ/xbQqRqdQ4JTGivNP23jv-f6aL9vzx5AWRRqfGvwsbqg",
           "tamano": 182176
         }
       ]

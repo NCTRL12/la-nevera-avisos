@@ -1,7 +1,21 @@
 {
-  "generado": "2026-10-23T04:32:03.076Z",
-  "total": 25,
+  "generado": "2026-10-23T09:31:00.217Z",
+  "total": 26,
   "avisos": [
+    {
+      "id": "recwByaiArkpuY5DP",
+      "numero": 116,
+      "cliente": "Bodegas Mezquita Cruz del Rastro",
+      "emplazamiento": "Almacén de Cruz del Rastro",
+      "maquina": "Nevera",
+      "fecha": "2026-10-23T06:15:10.444Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "La nevera que hay en el almacén está a 25 grados",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recetNUnUg7vBzpYw",
       "numero": 115,
@@ -17,10 +31,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261020-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/IOiSJYGpRzVZTfBTdrxflw/EdOnu7EWDIylCHpCvWmaCfvaPSZoiV-QeoBdSMYHBreIOUUetJMasOlO904f-8pimDn_R7hk-yJuWC9uD8W1SOQ69i_8RNWE2rGem9U-Q70zT6cy3QxYqc4VP67cS2KGOvw4-78OeMaTFl-lfKX4i7oiVMHajHWCkoez-S3fKYk/kv2NhkmlTzZh19bhHXQw6ABI36ZgNepsx6lqO9eNI68",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/g6C549JOSxUxHA5vr5cFEw/zcZZcS0yOPZYgEWnlnB3qSrnSw-9PujEB-rwQIeZHccR0_NxUAKqZQpUVU33GmlvGAxJpVxqwLSgpivV9QQhxl8D3VtSwZ0kEB5l2v-gaerxThYj4RRlvyk56monL9YgihQajn5YHdOld-ntKhLswlWFab-d1bmRu5FLFJPSuiE/609bhQW4Yzl8SyGlztbYMObbQgTfvCaNt4J3vJbcAr4",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/CMyyXOKoXmM6KKVn_qJ1eg/3RFlJ85hFWAnk13KUxxK-PDvn5JIUb1Q1ImHynPrV-r6MdR-nWv56pYlQqtYYgx2ejP15YFPBORQ3H_FOisXFgdZ1PPlcHo9pZGo9XYeSPJrUUIVREPYxrD_QKAEoySJExIr61cccqHKElonruAO6A/WjECh1yk26aODURSi97X0xWqodPQr21n-aTblcLeH7g",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/YgrI3G1uK9lYj63P-uUFuQ/ePn_wwrg3z6Vuuw3vmQVqtRVKPRqW7rans4Etll5vEZaRF4TIABMsrq4mCYS0TOTVPV-B3ahv1x_Xz_9nFJnImTbCfzS0MuP3cgAS-XQtNAFfa6q10JLOadoDKX0AMVQO7zPIqd6mPdr_uq-kCimKw/gQ2fyyv-ZPDNX8ok98mBSFsr8MBrenkJ8t7tRv2pBbo",
           "tamano": 154495
         }
       ]
@@ -124,10 +138,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/Az8qgVY0uCSlTOxvQQI8ug/slAVatyzVoNZSCQeQYgByKwStFiiIGLk95GajG-O4hZ1oJK_LW7TbgiW6XyGn_g--KyoCsY7AlsCNkKUU0UNNaP_RXisAGaaeBbLj0A6gLnEfaCdrbSBxEGelK4tbtQysh20n868woDV8TnWWdVWNKFCOHe6E5r1Q90lQJMJazc/jrTU9rs8nK6HkvIdhzTrYcuqz8vKdgFEHUJxHtw8JhM",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/2hnMzSYccDv__Tf5SfS--g/PNrwI3PnYGZXBfK7ZsGBMevj6fsa6Ku-SG_NFDEN3P6qSzQixIpF9FyXbVnUJOYWZD_t0Nq2h6fssy0kgGQBNSa8ZfeGKbMC9dPhF0EWi-D0b7nRbhzCQPPK9aAw6V9mfhGdyxTN18xlpT5nhuwlfGFyXRDQrCPL3-AH-DTFieI/qQ5lRNPLUX4XSAbdBfzV7haROOuZBtn8MnJU-166g4A",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/kDNlIKATiGq-oU-N5hd4Tg/Bk_L_kvk8ecsYv6QdYCVtDZq-2COCnieOqrp2zdCEV6GsplzyIXBSukpJFaUNXR56Wzp3YhMPjG3zmSAHk-_-ORH8AaliQzzqcEmPnhymDCU8psvv-yNaEQXh8c6-sXeSgpQlJ9qlUGWip_hclMKLg/KFkE12egN8EZD4V_fda4NxQTQQAra2qLxSaW8Rce_H4",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/iN45qvsOfz0a2tsK3OVZTA/QssVE-F3LJfmoEkx20zpLSoZNwnhtiE126w2P4nBF6Gqy_3Ov6UldpBJlGU8Pja4KZDIxbHfRpqngbwDu6Gb6pntPyySRkVZ6BO3bBUfLumLjrsTKDMZeBeOyewIisx9X1MgrTBpXgzOKYhfHHHAsA/j-fiNc6H2i7vWKnSf27GdY2jj8Qu3wigLc_AkqisKYw",
           "tamano": 209495
         }
       ]
@@ -147,10 +161,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/JLN9ayTLT22e6jNzMiJOzQ/9Np38_F0grh5BYC3rTpOVP26bAFY9CF_Ov2jT_ZO1jJr4NVbyvkP8mukVORDfSzv9yuWo7nvTdMfTwcsSfhG7OTKXJncf2NkXfXF1xz3dElxGGhLWqvKxjK8hWzxPfDxiZvTK8_ZS9tcv9s9ixTMabhoLBAskLN7GY3aMbVPQok/mzlZRCvmWg7U0bjsx7aUc0Je9AJMAHFY6BQhBOVoRVs",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/slXQfvvY0xrmqf_L7KHD5g/vlWEiUI-NMIai1MWl6lr5OVDq47LtXVJp_DzUQ-c1xwc0wou8MDeEyCDOfcfdVNH1dHG25nwE_cnQYLy8B2AIbjq_UwPP0tV33bXLRD3BW6TdpOyShfau5Qrc3ENem5kwmdzAWq_QkbuFjcPYNdp2feeMb2095bdc9FxFJljgFY/iFvFGKQwyh-sptPxMs_D9eOr8PPi3XIpo2tFOd0Y6Tc",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792742400000/XSNtLVDvU4F0s5jcG6LKSA/LVDr0NIJ8A3JI5lzFlRDg1OZKugrQnP2HNcnyc_SOslCOVGlxw6t9N8Mt91E5nGex-yA5Nm87H-uaUuYeQ-L0481eFH_xuJv2BBzPiONYyX5UOXCQN-srIkwJTOOoQkUXEtZ7u5NNIwyD8y3j2lVUw/CFnnLBlcwWn-H2fcLopxt6lIfkRHCSrYitnUtEa0lKQ",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1792756800000/7GKapp3FB-7LOTGgMU68kg/LTtmED7Q0wp-Wf4TebxAHaUATjhlhHPZQRiik-7xQDYZYz2_nOewX5zYoVrXH_XuqoGQsLdc-P_Y4LK_rfls4MWkIrhAKMumpY7NV2RAY2Kt5GzCAUptjY2EqBRAHBNYsve53NFFbzo8Q2wKF6KJWg/PbMbw8oyw_FOitEuqcsei-d-OPgSkf8ZHeJ41IN_hs0",
           "tamano": 182176
         }
       ]

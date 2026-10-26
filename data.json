@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-26T06:55:49.753Z",
+  "generado": "2026-10-26T13:54:37.092Z",
   "total": 26,
   "avisos": [
     {
@@ -23,7 +23,7 @@
       "emplazamiento": "Corregidor",
       "maquina": "Cámara delante del horno",
       "fecha": "2026-10-20T06:33:02.813Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": false,
       "descripcion": "Se ha descolgado la puerta y no sube de 15 grados",
       "identificado": "José Ramón Cuadra",
@@ -31,10 +31,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261020-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/hZB22Q3I6k_xKlwDmSU0zA/785Piryb4i4aLoHq_-vX2yUrZVJ24V5m1fCcI_poubwYDHM8A1eYhVv_aoVyEyWgzvin0fPm-A2EfajY8d0d8a5k-pq9rgB1i3U8PVFuuCEjRH17nB7FsQpqy4TTwxh1Nzv1t-LAUNk7HeqcizD3ioL6CJk9jqwfYK9paImf_Bs/XLkj88kB1IV7ZxaYPLFiWsczXO-QOCXDA1OzW6L4SMY",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/Iktdab0POweAOk511eQ4cQ/HIHExbOR0acgcSZREHelDtEIxhiB_y-khFtzNnDbNjya7hXGzF_n21BgOHMprexyFDpFHpuQwJgNg31TFDiJ-WCZ6nfoWJimEpbQvUi4oOgevgVx8rPOVB-gNSyiTEs_xB1vvNUg5za_JK9l4UB7SHZmqoNMDSoOJw9-JGe-Xjs/5LGFzLZqNoCRQ0zOlGn_scWoYN8Ww8W60-Ui9xvOdWE",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/euZYtxfEDYrWpHc64BFIlg/QmnUHEjXtHANLd2zhtzAhDC63lJtFEhC-ymhzg3sfzeP5sG3F89241IofqtsQQdPoBraADxWw2sf0VDzY_P4bPAZrOD2w0Wcpja8q1yi-BOlLPA-p7b5c18VAtUuTigKSt5D71-luQQvcWTzE3bfCw/ZL6yH4teagrmwxe7P74PEGxeMU89Py2pGYGEpH-B-TQ",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/DUBe4fiiRBnIyTFFuhTZpQ/Fr8LICRHezV8wlyMXkSXwr0JMjRahX_jkVNPhHELGBmjE2lIlFGAPbdT3BGT9FIsQPMdBnPrkNXrlXCosEJv6RHVAOYMIJpU9rQV0Ro22-BrKqhEQUL5xv48zCstqjrPI9_sF9ONekuRYkGM7n23Kg/I606fRbMg3dmUoQrTlsvOQfr1yWyziN3mtaxNhlchhg",
           "tamano": 154495
         }
       ]
@@ -138,10 +138,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/K4KH3SDRkIa5oeW-WS3uHg/B0R6FchL0N8RbwNX-mESEFGHu23sLSLx8vBsj3ocimy_8NloD5q59ZunXIWVz-xhwJa0vhCZW2ktRGn6PJU40VNLuHSfMJriGmRvHEw5_-5sss4PAYLKSkXcE9TifA3QeZsDf51c59f9j3KuIK1yRE0J7TBlXx8HO4Q_vuX9QPs/Stx54WFDqtJcuR6YskpoChOHJKA0Twimq2PR5qe2QWs",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/pHDTLLSroxgRotcjOs70HA/0A7o-GMgOuuIYF_ZgSJPq71h9muY17vdylBOoWVMFZRw3pHd0QC9bVbEIdU4GgKjf8du4gcIhI1qkQxEKC4bbK1L3oTg5pFDnV7RWbg1oGyAzf-TyyTkVHvS5cH_6C6xoripdiB5zONJ51YdrbcVo-DNF4IOpBhaBv3MG-7HpZQ/uOGkiaTfOl5IvmptEe-jzGFiT2_tvdn7IWDF3MGPVxo",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/dmrRzRNjGBttOqgfotQEcA/35SEdAuIdfQILOinK-Go7qe-73RgPmvqEfskDnY_Ur5ruzpoLiGsTnNwZ0kQXhTXd31Y_rom9KZzZxq0jfTyuuefkoJce7mUzu77pmwzyRBMpVFjhZkNgOywEUPEqg2ZniRVZYo-tG1nCnm7n46Wkw/AxlgH80nTxYGZSdwS1vXHcWos0Z7IJgcOuGoIZwSoNw",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/3CacIkae6d1hl6cc4A-vzA/1G3A6OhPAbi13-KxTZxZ9Hefnd1oiUziViYN8ixdi9apHEsriT1Vf0ThX1HBpxElVSzSl8me6383Glxv3kPOrCeAFj6misL_vbsmRVqLOynHDFgWe31JT5d1IV6R3qP55cAs_UW76rJ4GRcjmMNVRQ/T62VtL9_jgt-i6JOGyGajUcCYk3f1v55lN9Qv1y32M4",
           "tamano": 209495
         }
       ]
@@ -161,10 +161,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/PbZhZxxPylgGS2Ood3zCKQ/qEEtNywZEYP2ChAuzulLiW7hP3825pfMSComVRJNGPkNnQG1BG9rmVKrRViVYuhbvyTgBnZBysCxtxVw42W8UKFIRkPTwMoD8HtMabayGErQQIHWQnuNX3hOdHuqjTbMPGrDR5WSO6RP9V_wZCXqi_zxVsx8mBKJqOhKqVkYWsU/1ALmb99gVKxYBmIQRN_hCcZd6B75WQuKG3k5BW1dI2U",
+          "url": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/MH5qJLL9umR-paNPtC94_g/gOIBHg66WaizJ77M1LaOv_W50UzASDd0MLicnte-0_dAZujl10dR29PrAZHHA7BdNgqj89graGydMYf13Zs19fgizSapNmjQf8RVSYHrOG5NPik_v99AgJzYB_mqKZgW38TNTR8ERWCjz6Tkt1NQC3LbgcHoTxRypfg3bRgyZRQ/BiN6JVl_b0q0IvcjFQhsfEaThPrNXifGDX2sEs4gnVU",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793008800000/Szr-GxE5iTv-jUt7L-a92A/-rySH02x1iZbHfY8e8QhN3KsZ5MJ9Jp31wHwRRHlxJCB3AmQcCW1aBFlhyT9i0EnUI0c9pBrBn5H-iMOCCt0fUp_mFxKJ6Ual9TJLEagTGICTsGH1APGHSrm9zEicRxhjSJLRBuehEAMoOzjpPIVlg/xh--zevFBPOcea23Dyo-knIyExVUP1-wzA4D1wBnRI4",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/58/58/1793030400000/z2BBzUXFC3eQCaNStPCaQA/CotCF0bd6P5e92-5aEeFDQ-fI0R10O3gv1ddPHRNky7GTICakiMAMPTy5l2wgTQlBE-BJFjLCBBKiEaoTA0W2OtoENxt6Vrkh9sSDdVXjs7m5MlQjQ5rOpKh0cBL7k3EsBcvMZ2K-6_W_WEnNT1d_Q/Tu-6oVLZY4nqD_n2eE5KrrAj8GSkdbcobpnfZrlfRpQ",
           "tamano": 182176
         }
       ]
@@ -260,7 +260,7 @@
       "emplazamiento": "Córdoba",
       "maquina": "Varios",
       "fecha": "2026-09-21T08:48:59.505Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": false,
       "descripcion": "Revisión máquinas en general y limpieza de condensadores CRV",
       "identificado": "Manolo Moreno",

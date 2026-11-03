@@ -1,7 +1,21 @@
 {
-  "generado": "2026-11-03T16:05:03.578Z",
-  "total": 26,
+  "generado": "2026-11-03T21:42:28.797Z",
+  "total": 27,
   "avisos": [
+    {
+      "id": "rec1qpjptdrlsjoJq",
+      "numero": 117,
+      "cliente": "Regadera",
+      "emplazamiento": "Ronda de Isasa",
+      "maquina": "Puerta",
+      "fecha": "2026-11-03T19:58:04.793Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "Se ha caído puerta cocina de los fuegos",
+      "identificado": "Angela",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recwByaiArkpuY5DP",
       "numero": 116,
@@ -31,10 +45,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261020-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/qEw2njcHKePZ5gWogyG1Lg/l0MoRfyoO6EoKnSDW_eayv0WN6TDQQswZmsp69fLyLX8ELrQUSPQIC8AT3g_g44CdVTe_fwjpt_9JBVqR-mh_i9Al5kPRC02TI2bdxMlpuGbloZCveEXd5RSv6qUkdlqMyDAyzxqd63QHx4TgZxJ8UcBd-K97iUPfSW24xLhgcQ/hSonKGGNW4-FIeWG_QaLwKLxYQbKquaX8uUMufnJBtU",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/8_1WJ7gUXNrws9YpEY5prg/yeAQ4nJdoy0PEsnoLkR4Rdj9s507yfbpb95hpL5QCmQOxN9BNI7IcMxCgOJa-bEhRawRGPWhik7kwjmJ_WQiE8nSfwjGWYCf-G_b-AJolGrGRFW2XzN_Y6JpoCy7ZfdJopyfdfOUASzL4TdPF_RK6WzJZbnNPYBH_u2i9WmR334/Z4cYKbf0Jwl1AaEV_WRRv_FrHebnLvk1hLWJQd0jOVs",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/xBjyy0feCfF7CJyblHkr_A/bg8NU4eL1MpcgiPcnHo8CtMfWvCUDzfIupFG-Zwx2Xwcu2w78mLglaLhiCRhrYlob1Tnaz7GjunHPcNyf3GN48UiwdNddWRtknGKzAigAV0V4z2z_HvK5bflJ9EKYMVJrfN0YBtDgzECigKrZVzJOw/laMfGDhGgxSeNQlug45kxcaiSgnTd0GkxuRUXSkocm8",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/vuNzwLdjvQsv7MOqIrRGjg/5Px48YZU9fCjNArGlorlWeUJcSudUK1pwdEEfjd7YP3sAHg-d4uo485rM6xx_evy51f6s1PYrzehvrkGDWx1kcXC6EFfTI1eyV-eeAzV26ZwqRMizvud-2OHE8J6Gkp5YjeBppcYMfAG9zXDOawF3g/Vl-NhQhPeUkJh7LE7YxW2ctOr8E-95pzloPywwR-S5c",
           "tamano": 154495
         }
       ]
@@ -138,10 +152,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/VfbNYsKoq2x26ZLtvG7H7A/40rigFnZkgU0AttvojNs0HsLJ3n1DeE6RdSnKRN3sHOv6PoI_Jd6zZwd9WfkDmEtY0ZN3FgPCWNfD5kByxjd-hSwCy0CcrlC-RYkGlmoNT9P3zNwnQNlFLpTL3rH9wxsAE1fYvELxegJKvGKelw3usibFISaNId1VqKv93qQUuc/y0conp2cs8HQqn0yl1oZ92-Ka16smFAR1kgsD0JzQCk",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/UfgWSoxgVOtEAb0JvoS2nA/62LyXGSt3Ochyzzym5bZZd4DoqCYF6KwD1wQRoBQNauFgirJ6o5LtuNHhn5wT18r_HV6uAJKhUuGFQn8h-PpeiKJZOT8iD2-qHO_-fu-UkQ1RzacmoCKIIeM8knXln7EPRcobNERfXFZb7w9NiND4NVATsHqHb6tTNPSZdwht9o/y9o3GX4BqIu4Dd8XM1mnI_O-KOGhvCPt4SqAF-nCHcM",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/qb6wBQJ1qSsuQiL_u6YE2w/XNOgmzg19WFpo9vi2honpWhJozYOhNZ-oYKvl-lYYaMY7lPj-hIeXQxJPPFeFP4D2p93FVaXPEcpP11xj0vumSspYDGqYlMXRI3yX6_k67JbOTwrJO-g4ukH0loNnhj_hpzmu_tUYg-jtPxz-0hxcw/I0gaZRZ3dCukNZYpMosVfToLk2yVhBy4LU-cJ_AJ7Ls",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/8ms--faFnhIMson0aH8tKw/otLg1fzYY3APjyUoRwz7dlou-pHXna6kAn1Yx8R32Z8uS5yGQqMVNGw5WIDf2eNwkm2_0wCxBHsnu4gLSXcL9Ih2SBGtocYW6_7TguIHcrnelKRp6PnL6QpfAavcaEw2euVIG5Z2q6LbrNx0DrIYqQ/IBDefmnkofTlH1WFip2NZ0C5jTlwi4LR20wanGtOPOg",
           "tamano": 209495
         }
       ]
@@ -161,10 +175,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/tT8ICKJtQefUftIYf6ECYg/ldV0RaWU-mDX791_bsgHnR04SEZfqwjFbedb_PK43H-2vadUIB5V3r0up5IviRXjUfsrLzhhwgKXfti-6uHX4xOdaG7Kk43kSvwGMDyUtuYjVVtqyTZ_ewe_rmnvsvolKd5JZPKfdJpprotR0yvkamQFkTFOOOLgwacNzL4ooaQ/Y-tCRkkfCJ_T-X_SWg5xkzTwAo9aZKsgXR4lNUonKIg",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/bKTKF2tZvxiYf-bB0SLlog/qMjzSe5yRk6f772TU2Uaf3D-Vza-C4d23RoDJ12abeIo_S0rcFhRraYsRPrHBPdybcBSz8BjDEQ9mBTf76JP7anj98A1wAbus1mlgLuGyV2x55JoRT8qT0B5aNib8H8b0WTY9Rib5qOdWbfyrvbAvYRp0wr8q9LMpSzNcFzUmTA/EvwQffosZ7VMRVZ-wSsnzsDTY9Qy5AsNHTtoXPPhX3k",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793736000000/ORlqLTzLFkB4QMHbzMrkLw/RZiUR-cKncjiybUmG077Htz4XTtYokdFt1FXqSOSTv_LUuV9dQMfbS5pl2Cp11bU09uwhhSFd6j2hMFvqqlc9mbVh7K6dmgG06F88y4jf0sPEbZjjPkUZZVlzI7AjeWR_iojnNSIqEcQWFdO65QS1Q/N1IADR6AUXbrIzQqdkCBFgL8M_uza7CYuxfskQFRPA8",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1793750400000/KVKT2V83URLjcOlZOj-HLA/O13TaS1zCq2uSp9MQHNq5Vp_rgm5dELMw5DI2qiCh_ZuznVmEECef_JvLK8a30wQOsIwu9fgVYCK2yNblhxEmSab_Lctyqno2tdX073tjbuOESMXrX7uhlVXcIAwkILMF09Uh0X2sZkVyh0XTOFTOg/CUEWPQMWyxj7hCDKE2fiGlGuTT49hR2okQZP1xuGGD4",
           "tamano": 182176
         }
       ]

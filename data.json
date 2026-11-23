@@ -1,7 +1,49 @@
 {
-  "generado": "2026-11-23T03:17:16.131Z",
-  "total": 29,
+  "generado": "2026-11-23T13:12:29.615Z",
+  "total": 32,
   "avisos": [
+    {
+      "id": "rec58nreT9xlF9zEQ",
+      "numero": 122,
+      "cliente": "Bodegas Mezquita Cruz del Rastro",
+      "emplazamiento": "Plaza Cruz del Rastro",
+      "maquina": "Freidora eléctrica",
+      "fecha": "2026-11-23T06:39:57.352Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "La freidora eléctrica se apaga a cada rato",
+      "identificado": "Cruz del rastro",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "rechUE4elT4YxWBWz",
+      "numero": 121,
+      "cliente": "Bodegas Mezquita Cespedes",
+      "emplazamiento": "Cespedes",
+      "maquina": "Cámara grande",
+      "fecha": "2026-11-23T06:36:32.867Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "La puerta de la cámara está fallando",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
+    {
+      "id": "recNkU3tZqVdTsNwj",
+      "numero": 120,
+      "cliente": "Bodegas Mezquita Cespedes",
+      "emplazamiento": "Cespedes",
+      "maquina": "Fuegos",
+      "fecha": "2026-11-23T06:33:55.283Z",
+      "estado": "Pendiente",
+      "paro": false,
+      "descripcion": "Los fuegos se apagan y cuesta mucho encender",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "recpOqQLCigAuRBLp",
       "numero": 119,
@@ -37,7 +79,7 @@
       "emplazamiento": "Ronda de Isasa",
       "maquina": "Puerta",
       "fecha": "2026-11-03T19:58:04.793Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": true,
       "descripcion": "Se ha caído puerta cocina de los fuegos",
       "identificado": "Angela",
@@ -51,7 +93,7 @@
       "emplazamiento": "Almacén de Cruz del Rastro",
       "maquina": "Nevera",
       "fecha": "2026-10-23T06:15:10.444Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": true,
       "descripcion": "La nevera que hay en el almacén está a 25 grados",
       "identificado": "Rafa Romero",
@@ -73,10 +115,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261020-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/if0con9LKOgv4OYTXAbmUg/2pjfzuEu7QwmbsLLotsdyC2jI0vAr15Gufp4m_5cvLVyG1y068tC-N3VX_htYKLk9j4rw4iwOXeCBv2Ehqjr_9dp6cRcyTbBV9Z7hvpYCWEctOJL_Q1X1POUB27n2MJRAR9DzLYd_Nl8resQLLN0TXJXc4tYrsWMMhoZ8-lLmSM/Nxmjq_ptl4BLUrknG3RA53MwEhiDgbxq7u9KSLhmtUM",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/s-zNdHo6KHG3_c29nKf5Ng/czQiBUadM7v8-I5Zl16-IVr5Xp1ctT9g6s9NWL-8WOs2NVqi_sVRixPpyiyy-Yh-MWfQ-zt3g__9P0I1yO6ZDRPjDJ58rEj3Wh4JZpR0gQsGQ_2WkfBZlHu018XRFJtrPoP-4vkrjOQNtTRei0eitTCPHduynV4kPXLEGziMY3Q/Tbt5ArG1dfoI5V9nnjnoHZ6PKoO_1vFxOYri16pwfcg",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/2OZxypTbPYgo4gsggwlm8A/JkGXxipGPb8v8iWpshhFk3oK8nIgkwO6QLeo-JFSSEZ7PrlmnAJlA83M7kw-55l5DP-C551kqsRYu6j0L6TQDByFqppX7sfyZEQcllULZoQcAIbqbYOldvH1XtTNN8TjQm4S67IIJnQxeUgH_nIE-A/o-ZGSvLhaDVCEG1g4takXnE8--mvdGpqA9j_SEnAuU8",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/0Uaq50PZ6cujgbSlK_THfg/fNF0n-FOPjJOIwdg7ggjyEhlsDoendFv8MNnXb3vbzE3v2Lz8_ECEYLNAw_hoB2aahunwAkBbyKVyU6LeKHa49Vhbz-ysPPcjv1YGeJfmZPnXCRH8eT86HcrJ8ZVtboqlFZ3nLgCQ32Q8XMvnEFG7A/QDBBdvN84MpmYHweKbCoWzmnZjHSgsyPb7eMgzDN1MA",
           "tamano": 154495
         }
       ]
@@ -130,7 +172,7 @@
       "emplazamiento": "Céspedes",
       "maquina": "Cámara Grande",
       "fecha": "2026-10-08T11:29:40.885Z",
-      "estado": "Pendiente",
+      "estado": "Terminado",
       "paro": false,
       "descripcion": "Estamos sin luz desde que la quitamos por el problema de que saltaba",
       "identificado": "José Ramón",
@@ -180,10 +222,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/_-T_MIKbarJ0VThvhpdkwQ/8WedsPL439Sh8cHpJWdxVOmES-eFECdUzJ63mnD7Kx7SKkf3n0JMkbrl6FTl-aKnq1xIhmB8y7atHVjlD2cNcW5UsLCU5dxkc1z6ByTKXZZCokPljQx3r_9ffA4LcjIRTJPWK87CbGB5u9rYieQhr64oVZ8SKqVm83aqzebd7D4/HMtPot4MWkxdvc5uPD7QO4TjbERF7PL2EsNIuiJHmSo",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/q_ZWnHuQrOh68RvxjyScFQ/m2jVmdnvSO-muBfLTA7n6WMvx9-ouHdotbeZY6OjnkRj9JOVO7EoSTk1gQjjTxDARPg1vVlHi6Eiv6CWk_i9Tsz2HkzeHmw_rT1MJt9Lx9zYJ3F3wqTMR3rRBp1IeJgVBiPxjac933CM7_fE3upLOMweySDhKOpu0zZFE3a87dc/CujxB7aAfTRlg0qAeWN9qisE8xwgL2DZOeV1hHyyepw",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/GXF0fFHo9vJagLbZTXtuuA/je6v1unGAjiBi3uWBp7SXX1Lz0Vvdgg0bVPb8ZHrdHtg5_ocbzQikRdr_Ad1QYw9XTqjuUA-aJwz-h8rTMRSBPtr4n64BySL5oG7N5MSRMy880CLPiSVdeL0oQKdquqe7un6WYpJgwBXMHijleL1eg/kHTqrP28RfzMjVMk2DI-bO5VKAF1IjmL1OPxBbrpaI0",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/XGITCcbLjI-yUCGs1xuFHw/0y5MWsrHKDhrhSWPkmDqX26LKkKfE0qPVtn2-p0WhY8wUiLJSy0fOKNK42Vo6L27cL2bclX7H9SmM6HjiLNcUKhs6NRub4PqRpY0HLG5d6DKD0gPg_eD2-_zkZVl9c-7_f86G0X1keV70U6ZKCHu7A/kHquyaaC1P_re0MnQ9gBQTs3A-ORpq5WvodAdCva_IQ",
           "tamano": 209495
         }
       ]
@@ -203,10 +245,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/tFJ3BHMZa0zdQElY6YQenQ/FKVew27s6-h88Gi6A2pvxMJ2hHg-Tachg7Cw8OBR7FuCdftJQV-Qd-tEt1pzK1vvoCUmD8l1_4Zu34uqXEyd6yz5-M4cWL9ZBzF3H508xWvTdKWxMqnmQDHkiVbVIDGmeba2a37ZTabQCgP6peZF5QHX0QMmZd7bv15WSyXYiRA/lduV1GXd0cou2p5x9h8jCYBHHw4EeS8HfGBRCUoa7Qs",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/csu33laVMog6gzEo4hQ3cQ/wKQd_gh82NTcXTqpo95pu1BZEGDHZD2s9NlXaUJ9O31TCpoy28afv2gB_ZHOMmyy_QYxPjjaaD1plRaj0nzfBJFRJMm5oT1TN0NWm2ykDaKqS_gpnFaAqHzACrkROPqUGjg8O2V_ajt9ljQwKLPFsNLXbvAipelRyxk2HgeX7SI/OSvjnEhYn8pF2ZfkUIl4YIFjgGQErIpK8eQ2kV9zGlQ",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795413600000/En2CDNitHIcC1pae6xoVSA/yD3m9_BAQRCgy36xAPEdK6UXjTEr5EfZjaXwjtJu9hJrzIV7a1U3_F2H6uV-4jhJo1dhjyZQr-mfhbAo_rmy8PmaKluDrRKzrFPytKOXGH17-PYehkOZLyGB8sfJOmi0Z44Ugr27LeHki-eHwWNT3A/1ILyLnSNPaEg0HFkt_Kercts0t6sh-WDuVruykn1i6g",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795449600000/joMgu2nBB7x8JpWldcbNuQ/pLKt924xIGUSdIFcXw6p12mLBXoI3flN4zOisfVmScF5oulIQdLMfIC3BUSdQ99w7OX4coSKMa_adQOI-HOpohcI85OS0yo5anubPufiumdaXH_aiQDuy00ME3GJwYzKflpOiedEBIA-VsjJZVrfUA/wbHgBhQg2aiFZsUOOCHtM4Hzg-qiIYnylod7C8fBKW4",
           "tamano": 182176
         }
       ]

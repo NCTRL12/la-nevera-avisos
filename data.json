@@ -1,7 +1,21 @@
 {
-  "generado": "2026-11-27T04:57:39.039Z",
-  "total": 34,
+  "generado": "2026-11-27T14:48:51.586Z",
+  "total": 35,
   "avisos": [
+    {
+      "id": "recu7fCzgpbTbBRgg",
+      "numero": 126,
+      "cliente": "Bodegas Mezquita Ribera",
+      "emplazamiento": "Ronda de Isasa",
+      "maquina": "Vitrina de tapas",
+      "fecha": "2026-11-27T06:23:14.774Z",
+      "estado": "Pendiente",
+      "paro": true,
+      "descripcion": "No enfría",
+      "identificado": "Rafa Romero",
+      "urlPublica": "",
+      "adjuntos": []
+    },
     {
       "id": "rec9UbuROI6GzYaAF",
       "numero": 125,
@@ -17,10 +31,10 @@
       "adjuntos": [
         {
           "nombre": "17956187983297964438581578614317.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/mKURskBzsrwbqZASmv_pUg/FEZidYGIWUqcf_0M2jjlNEczkh0yAOjES-dypF2GCzd7Kghz7_uWNjGu37r_ZNoSfsviUTW5_zMAZd2q18X4oHMYI0fX5SP5gvoGug49Rag9UN-AwF7ODFB-kwERrDdArC-ynkDKUkPng-kyvzBbAR-N0E1sfa0KZ4Nu0W8DCYusbJ-73Y1WtDkoO6TaFkYr/pJ0H4oBbwNPo9BLpcGpN3MQfa2lv-JAlLLSJT5BBfx4",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/8s8nAthB2vc6yts_SyVpdw/AoyPKfYdozWTRifVGaHOWOv3bTl6NZ2bVpVZciVEbLrFWWdkPAcGoCr5rPPtW3QXJFDvwwVn9jxYtMkd2RR9Qv3tRgx6W0qBSfVK5_3FnwkP8QPOePUvcUZe06d0YSgZ4URiuDV-lrxVirQWXxDnNqcKY-G1dgtBwT_y_JfW6OCz-If8I1zf5k9TN7WzRzyn/48d3iXA4mCHvSID2Nqs8SvVb5RiE1cKlsSD_AFd9qYA",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/AVVGUnM_MYT9TuUvnpTNrw/xT0WYbBBt4hxjbFlv7LjwDVkHqjG60_kwyEmnvaql46PEtTwLmEEuRyqiogCk9eooWNBbfSA546lVIxPVnkdaSfn1cM7yAnBUeDMXrIadQPX8QlnO6v5llcXVJulG7-dU7shk3VXtyEMBI3X9I2YGQ/EYZXctS-86YWNLl6J4RL7bp_0I7bruIkfDLVGAZdYzA",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/mJbXBC3oyneQ3qvTsljJ0g/l7_ZW4QX17c1UjLX8iZItH5J-tJjlCrCef7knjeI4eTX3jLsFnL14YsYB31oLjywd80aF5xmpTkWHxmL4b_F8_XwRayTxJViBNxTKEA7BvNfDt_1jQ2VKugsIGIIWoU7-KfjY3LWvDx6ULFS-zxGaQ/XNcBTQRyhmAnT6oiIvGK9b0pywy1jnlwR-7yj5QJms0",
           "tamano": 3439382
         }
       ]
@@ -152,10 +166,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261020-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/QwuMPxOfBYBKcCJd8WJWew/bS55VstrMf62k_Cs__jDIgpMMeuwVQu-BsKwy_KbyNHprL0zdaJayHu_8Vl5NcBoJyA1ZUjjFbhGiyb47kcnhmGODwzJtV6JWbA0YLaYx00RpaxEkAWqDoapL58Mu4RAOjM1PGJwd1dghqRU4enYexLi9V0o90FzH2aRYDEMm0s/5d4oW-ZWPPqX7DlD8msmrtnagQ7qbdeAWA5t75Q75tA",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/cxG2k3WRmh80uFF3d4Eyuw/tAs8PRpRGRljwZ-x_-um7FckEuUIsbiTCBivsNPWIlkB-rP72xVIjofHEOwGQ2-G4NyvK7GVjcmZqnxWKnlxpe3Gh_Q0TkI8uchGDCWj_lyoYWcQ0FEEc7dUlatUPbSaSdvVpnGIpq3LLOSzHYpvYD-M56sDuer82b8_GG93hZw/ViJffB7cS3CFF-l-T9w8Q9SaYxRoJKsKHm-qco_hnBY",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/5jNeCJKcovckbmKrOyaJXw/zHN3nr4jaUWV9L0ZKx7XC0Sp609O4_S6liPUvnvAfkM-j95Ooh7Gu41lBs52Hj7gkaiktf3tj2Bv9RWT4BEWZVxk4ydsv8SefSJhtk2as04cU7rsYc7aYu1icooHRYkBFvw1z2qBK2XRKRUo2cpm9Q/3D27AJym7Ph19N1K8vHKzoWYiV_brMRFMds2sTzJkUE",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/2J-H74aZGlltzbo17_uUBg/f7rx55gBVU1LvF790Xe2GzI62bCA8PlRCAYKnCjJdI7_4VurXtGw61fFcA6t78aSm25VZx19M3jYwq_dTeuqqYLtMc1znb2ZZjiFSPMuFWx4pSJLO1aiGadyqzT6SniI_6NhKuJRwwb6is8Ew1vndg/mdVVTpowu9reoBIkD34fajSJxqU6KWMApaClQ59W-GA",
           "tamano": 154495
         }
       ]
@@ -259,10 +273,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20260930-WA0084.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/xhnc5gimLYfc3RBqXhbepw/R3bFiSZPKq71koX5mOChUrovQp2rmewa_NSfJBx58iwCxZULVf6T4yybmkdYG9bjSpFil2ezC9k6qrGWDCzaGyIV5YkuN-wgGjn9PjWPyzhVmGaDqe-m-UBGd21nM0EYBsYD6U50V4t4ezwWR861-gZg8GcEVMjzt_InB4F6j9M/LH3oHyeaSEZ4p85lVsiloEGo_YzW85AkilP5J7m1HrQ",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/miqSX1T8bTxcd5DYsKi92A/CczCUg4blAupCwkqWQ6t3c3oR0EWCdkl2jdtMmkJhsmTDQHtlBn05c_rVesL6X1focHtAqsPMGW-r1vvGMKSEUI3XHgV1gknCgD9HI-UbQcU3wuUvHeV09mkFq0h99SyaETrNECDz-h4OMUSfFwY1ATZCOALZ_A3FOKSL0NKtvA/ygd1ACBh5eHPbtNbdgNn5FgDldKCb1LArnbWhgB_Z6k",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/UVkHBMLpTRZVdZ4WvY_JSA/bpIZT7jMOMAJ6P36DZiVooQgupBPFk23NrPryU4nuB2catmUFy2hM7MvtuCHSNi8eU5Ky268p4pLrZzapwsjsmMzuJLfegsKp6ilaPKBJA2gOIp-VF-L8PV9dQbNYZk1e9WpIf0gTrsw8Y1MwaPWww/Oj3hh7lJq4tQVqunm73hfXjcvTdU9g9Z-LnuVr7n_mc",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/YTeS_6rWF8Amkx_Mq0CzyA/LxfZwK5l4zM-S9c5xqErLfwQIlTATH0t8AxeDwg_597sNVeDoXxSPZl9aSLZEWZN5pqiBAO4RGl1oAAl5swRYo4Mz-vq0-ehSB0cUW5h4jd0xFf-_UlKEHkWWa3g_sKeMGxBvf1YrDznodwKQrz0oQ/Gpvnwui35bghaZVPJ9pxGNxrh2qrA1w7IZ9oRGsmf4Q",
           "tamano": 209495
         }
       ]
@@ -282,10 +296,10 @@
       "adjuntos": [
         {
           "nombre": "IMG-20261003-WA0001.jpg",
-          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/fa1zEDn1IRpDcORHWt6TXQ/4_FNk01if1vo23q3elt4v2B6jTYwE9cGVQwamOrJQOFycLWJxw-ZlMLBAY7F7j6FyHxfBKXAtUwVPMXz9zvcAArmH0EdIAwOv5-ks6HzQcSXyPuOAFJ7SA5VVf-jsUZSS-ghEbVGM_e6dcxfXoSYUtqJJBNAwoa0yachKjmUxpU/kmb86XKAVsUk2cti19pBsft92-BVxE2VCZ6EFAAmBn0",
+          "url": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/O7s_beYNBJlGNkqUcW1HQA/RYgLzvti3TywaYvnD_NikjHuVEzA5FaPnGxEqweA-RikeBQ5tfpNr8EW_ykkPyV5zjPh93y2G4A2dantunF7lNxMLi_lVAtkFyh-6718ems9Iic6g2B5y6nbu70Jno00KR6vNnVJg4poJyBYxdiAFj8xKCU8rjrMekrWyE4pe9Q/G8G0mIP8AimMqjrMgLzN58o_Br1-CLmngQwtYINriCc",
           "mime": "image/jpeg",
           "clase": "imagen",
-          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795766400000/xD9YThAM4_XFAKONi3EU1A/rZ0SFyA7kyGriSslqKUCpy3PBwfhramzcit5j76vH16rn_lwNhHe3mQSD51oIlJzZKNWvaIw-5QY3ZY3b1VF3dy99NuizIRTLtSW3b8f_NG37xDIePmjGvIAmoB7bDKu9ZeBq2Yqq9AJYyupigwgCg/vejqeUIiQvFe1y3BxQ_-bstiCgwZzu5eA5F1wSb-apk",
+          "miniatura": "https://v5.airtableusercontent.com/v3/u/59/59/1795802400000/w6hPq07H7apKVqaW8IaYcw/bITinsaySZy4phnZ2qoJ5lJumJP60p6LCPV2En0nG6iZUIkp36IT8ASGenlWXaepaYVGyxNQEPJa6mG3O26t9-zFPCGCFQZMM9Z-CxaSqrO011aKlkFrMrWdPoopwdiLX1pzbOJ8OCiRhFUAYEoEYw/SqvgLIsBCcOuqaUE2tsTvTJ4a8DdNtKkYGoS8RS9s9Q",
           "tamano": 182176
         }
       ]
